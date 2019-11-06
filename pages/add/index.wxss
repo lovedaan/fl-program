@@ -69,3 +69,33 @@
 .form-footer {
   padding: 45rpx 15rpx;
 }
+.ly-type {
+  background: #fff;
+  padding: 0 15px;
+  height: 44px;
+}
+.ly-text {
+  position: relative;
+  font-size: 26rpx;
+  width: 160rpx;
+  white-space: nowrap;
+}
+.van-radio {
+  margin-right: 60rpx;
+}
+.xw-box {
+  padding: 10px 15px;
+}
+.xw-box .label {
+  position: relative;
+  font-size: 14px;
+  width: 90px;
+}
+.textarea {
+  flex: 1;
+}
+.xw-textarea {
+  border: 1px solid #ccc;
+  width: 100%;
+  height: 100px;
+}

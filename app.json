@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/query/index",
-    "pages/add/index"
+    "pages/add/index",
+    "pages/query/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

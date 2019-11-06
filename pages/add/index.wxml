@@ -2,67 +2,78 @@
 <view class="container">
   <view class="form-container">
     <view class="form-group">
-      <view class="group-title">我的信息</view>
+      <view class="group-title">录入者信息</view>
       <van-cell-group>
         <van-field
           value="{{ user_name }}"
           required
-          clearable
           label="姓名"
           placeholder="请输入姓名"
+          id="user_name"
+          bind:blur="onChange"
         />
         <van-field
           value="{{ user_phone }}"
           label="电话"
           placeholder="请输入电话"
+          id="user_phone"
           required
+          bind:blur="onChange"
         />
       </van-cell-group>
     </view>
     <view class="form-group">
-      <view class="group-title">黑名单信息</view>
+      <view class="group-title">上榜人员\机构信息</view>
+      <view class="ly-type d-flex flex-center">
+        <view class="required ly-text">上榜类型</view>
+        <van-radio-group class="radio-group d-flex flex-center" value="{{ radio }}" bind:change="onChangeRadio">
+          <van-radio name="1">黑榜</van-radio>
+          <van-radio name="2">红榜</van-radio>
+        </van-radio-group>
+      </view>
       <van-cell-group>
         <van-field
-          value="{{ user_name }}"
+          value="{{ r_name }}"
           required
-          clearable
           label="姓名"
+          id="r_name"
           placeholder="请输入姓名"
+          bind:blur="onChange"
         />
         <van-field
-          value="{{ user_phone }}"
+          value="{{ r_phone }}"
           label="电话"
+          id="r_phone"
           placeholder="请输入电话"
-          required
+          bind:blur="onChange"
         />
         <van-field
-          value="{{ user_id_card }}"
+          value="{{ r_id_card }}"
           label="身份证号"
+          id="r_id_card"
           placeholder="请输入身份证号码"
-          required
+          bind:blur="onChange"
         />
-        <van-field
-          value="{{ user_id_card }}"
-          label="行为描述"
-          type="textarea"
-          autosize
-          placeholder="请输入恶劣行为描述"
-          required
-        />
+        <view class="d-flex xw-box">
+          <view class="label required">具体行为</view>
+          <view class="textarea">
+            <textarea bind:blur="onChange" value="{{r_xw}}" id="r_xw" class="xw-textarea"></textarea>
+          </view>
+        </view>
         <view class="pic-box1">
-          <view class="pic-label required">相片</view>
+          <view class="pic-label">相片</view>
           <view class="pic">
-            <view class="pic-preview" wx:if="{{pic1}}"><image src="/assets/img/close.png" class="close-btn"></image><image class="pre1" src="{{pic1}}"></image></view>
-            <view class="pic-btn" wx:else>
+            <view class="pic-preview" wx:if="{{pic1}}"><image src="/assets/img/close.png" class="close-btn" bindtap="removeImage" id="pic1"></image><image class="pre1" src="{{pic1}}"></image></view>
+            <view bindtap="chooseImage" id="pic1" class="pic-btn" wx:else>
               <image src="/assets/img/photo-icon.png"></image>
             </view>
           </view>
         </view>
         <view class="pic-box1 pic-box2">
-          <view class="pic-label required">身份证</view>
+          <view class="pic-label">身份证</view>
           <view class="pic">
-            <view class="pic-preview" wx:if="{{pic2}}"><image src="/assets/img/close.png" class="close-btn"></image><image class="pre1" src="{{pic2}}"></image></view>
-            <view class="pic-btn" wx:else>
+            <view class="pic-preview" wx:if="{{pic2}}"><image src="/assets/img/close.png" class="close-btn" bindtap="removeImage" id="pic2"></image><image class="pre1" src="{{pic2}}"></image></view>
+            <view bindtap="chooseImage" id="pic2"  class="pic-btn" wx:else>
               <image src="/assets/img/photo-icon.png"></image>
             </view>
           </view>
@@ -71,6 +82,7 @@
     </view>
   </view>
    <view class="form-footer">
-      <van-button type="info" size="large">提交</van-button>
+      <van-button type="info" size="large" bind:click="submit">提交</van-button>
     </view>
+    <van-toast id="van-toast" />
 </view>

@@ -12,8 +12,8 @@
   <view class="nav-wrap">
     <view class="line-title"><text>尽在家政红黑榜</text></view>
     <view class="nav-box">
-      <view class="nav-item"><text>录入红黑榜</text></view>
-      <view class="nav-item"><text>查询红黑榜</text></view>
+      <navigator hover-class="none" url="/pages/add/index" class="nav-item"><text>录入红黑榜</text></navigator>
+      <navigator hover-class="none" url="/pages/query/index" class="nav-item"><text>查询红黑榜</text></navigator>
     </view>
   </view>
 </view>

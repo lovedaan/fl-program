@@ -1,51 +1,88 @@
-//index.js
-//获取应用实例
+
+import Toast from '../../components/toast/toast';
 const app = getApp()
 
 Page({
   data: {
     user_name: '',
     user_phone: '',
-    user_id_card: '',
-
+  
+    r_name: '',
+    r_phone: '',
+    r_id_card: '',
+    r_xw: '',
     pic1: '',
     pic2: '',
+    radio: '1',
+  },
+  onChangeRadio(e) {
+    this.setData({
+      radio: e.detail
+    });
+  },
+  onChange(e) {
+    this.data[e.target.id] = e.detail.value;
+  },
+  // 提交
+  submit() {
+    let { user_name, user_phone, r_name, r_phone, r_id_card, r_xw, pic1, pic2, radio} = this.data;
+    if (!user_name) {
+      Toast('请输入录用者姓名~');
+      return;
+    }
+    if (!user_phone) {
+      Toast('请输入录用者手机号码~');
+      return;
+    }
+
+    if (!r_name) {
+      Toast('请输入录上榜人员姓名~');
+      return;
+    }
+    if (!r_phone && !r_id_card) {
+      Toast('请输入录上榜人员手机号码或身份证号码~');
+      return;
+    }
+    if (!r_xw) {
+      Toast('请输入录用者的具体行为~');
+      return;
+    }
+    if (r_xw.length > 200) {
+      Toast('录用者具体行为不能超过200个字~');
+      return;
+    }
+  },
+  // 选择图片
+  chooseImage(e) {
+    console.log(e.currentTarget.id);
+    let _this = this;
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: res => {
+        let opt = {};
+        opt[e.currentTarget.id] = res.tempFilePaths[0]
+        _this.setData(opt);
+        // 执行上传
+        res.tempFilePaths.forEach(element => {
+          // getFilePromise(element, 'voucher').then(res => {
+
+          // })
+          //   .catch(err => {
+          //   });
+        });
+      }
+    });
+  },
+  // 删除图片
+  removeImage(e) {
+    let opt = {};
+    opt[e.currentTarget.id] = '';
+    this.setData(opt);
   },
   //事件处理函数
   onLoad: function () {
-    // if (app.globalData.userInfo) {
-    //   this.setData({
-    //     userInfo: app.globalData.userInfo,
-    //     hasUserInfo: true
-    //   })
-    // } else if (this.data.canIUse){
-    //   // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-    //   // 所以此处加入 callback 以防止这种情况
-    //   app.userInfoReadyCallback = res => {
-    //     this.setData({
-    //       userInfo: res.userInfo,
-    //       hasUserInfo: true
-    //     })
-    //   }
-    // } else {
-    //   // 在没有 open-type=getUserInfo 版本的兼容处理
-    //   wx.getUserInfo({
-    //     success: res => {
-    //       app.globalData.userInfo = res.userInfo
-    //       this.setData({
-    //         userInfo: res.userInfo,
-    //         hasUserInfo: true
-    //       })
-    //     }
-    //   })
-    // }
+    
   },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
-  }
 })

@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "van-search": "/components/search/index",
-    "van-card": "/components/card/index"
-  }
+    "van-search": "/components/search/index"
+  },
+  "navigationBarTitleText": "查询红黑榜"
 }
