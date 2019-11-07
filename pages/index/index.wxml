@@ -10,10 +10,13 @@
       </swiper>
   </view>
   <view class="nav-wrap">
-    <view class="line-title"><text>尽在家政红黑榜</text></view>
+    <view class="line-title"><text>一切尽在掌握</text></view>
     <view class="nav-box">
-      <navigator hover-class="none" url="/pages/add/index" class="nav-item"><text>录入红黑榜</text></navigator>
-      <navigator hover-class="none" url="/pages/query/index" class="nav-item"><text>查询红黑榜</text></navigator>
+      <navigator hover-class="none" url="/pages/query1/index" class="nav-item"><text>认证查询</text></navigator>
+      <navigator hover-class="none" url="/pages/query2/index" class="nav-item"><text>授权培训点查询</text></navigator>
     </view>
+  </view>
+  <view class="map">
+    <map longitude="{{longitude}}" latitude="{{latitude}}" />
   </view>
 </view>

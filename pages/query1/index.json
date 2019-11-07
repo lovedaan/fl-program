@@ -2,5 +2,5 @@
   "usingComponents": {
     "van-search": "/components/search/index"
   },
-  "navigationBarTitleText": "查询红黑榜"
+  "navigationBarTitleText": "认证查询"
 }

@@ -1,39 +1,23 @@
-// pages/add/index.js
+// pages/query/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    background: ['/assets/img/3.jpg', '/assets/img/4.jpg'],
-    indicatorDots: true,
-    vertical: false,
-    autoplay: true,
-    circular: true,
-    interval: 2000,
-    duration: 500,
-    longitude: 0,
-    latitude: 0,
+    value: '',
   },
-  getLocation() {
-    let _this = this;
-    wx.getLocation({
-      type: 'gcj02',
-      success: function (res) {
-        console.log(res);
-        _this.setData({
-          longitude: res.longitude,
-          latitude: res.latitude
-        });
-      }
-    })
+  onSearch() {
+
   },
- 
+  onCancel() {
+    
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getLocation();
+
   },
 
   /**
