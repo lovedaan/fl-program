@@ -3,7 +3,7 @@
     <view class="search-box">
       <van-search
         value="{{ value }}"
-        placeholder="姓名(机构名)、手机号、身份证号"
+        placeholder="姓名、机构名、电话、身份证"
         use-action-slot
         bind:search="onSearch"
       >
@@ -11,7 +11,7 @@
       <view class="sreach-btn" bind:tap="onSearch">搜索</view>
     </view>
   </view>
-  <view class="search-result" wx:if="{{false}}">
+  <view class="search-result" wx:if="{{true}}">
     <navigator hover-class="none" url="/pages/particulars/index">
       <view class="item">
         <view class="user-info">
@@ -38,7 +38,7 @@
     </navigator>
   </view>
   <view class='no-page' wx:else>
-    <view class='text'>没有相关信息！</view>
-    <navigator hover-class="none" url="/pages/add/index" class="home-btn">去录入信息</navigator>
+    <view class='text'>你查询的人或机构尚未有红黑榜记录</view>
+    <navigator hover-class="none" url="/pages/add/index" class="home-btn">我要录入红黑榜</navigator>
   </view>
 </view>

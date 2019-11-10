@@ -88,7 +88,7 @@
 }
 .no-page .home-btn {
   margin-top: 50rpx;
-  width: 240rpx;
+  width: 300rpx;
   height: 85rpx;
   line-height: 85rpx;
   text-align: center;

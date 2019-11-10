@@ -10,13 +10,6 @@
           disabled
         />
         <van-field
-          value="{{ r_radio }}"
-          label="上榜类型"
-          id="r_radio"
-          disabled
-        />
-        
-        <van-field
           value="{{ r_phone }}"
           label="电话"
           id="r_phone"
@@ -46,22 +39,22 @@
           </view>
         </view>
         <view class="xw-box">
-          <view class="label">具体行为</view>
+          <view class="label">红黑榜记录</view>
           <view class="xw-list">
             <view  class='xw-item'>
-              <view class="xw-item-title">李四</view>
+              <view class="xw-item-title"><text>李四</text><text>上榜类型：红榜</text></view>
               <view class='item-text'>昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的</view>
-              <view class='item-time'>2019年11月8日</view>
+              <view class='item-time'><text>2019年11月8日</text></view>
             </view>
             <view  class='xw-item'>
-              <view class="xw-item-title">李四</view>
+              <view class="xw-item-title"><text>李四</text><text>上榜类型：红榜</text></view>
               <view class='item-text'>昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的</view>
-              <view class='item-time'>2019年11月8日</view>
+              <view class='item-time'><text>2019年11月8日</text></view>
             </view>
             <view  class='xw-item'>
-              <view class="xw-item-title">李四</view>
+              <view class="xw-item-title"><text>李四</text><text>上榜类型：红榜</text></view>
               <view class='item-text'>昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的</view>
-              <view class='item-time'>2019年11月8日</view>
+              <view class='item-time'><text>2019年11月8日</text></view>
             </view>
           </view>
         </view>
