@@ -10,10 +10,20 @@
       </swiper>
   </view>
   <view class="nav-wrap">
-    <view class="line-title"><text>尽在家政红黑榜</text></view>
+    <view class="line-title">
+      <image class="weather-logo" src="../../assets/logo.jpg"></image>
+      <text>- 您 身 边 的 护 理 专 家 -</text>
+    </view>
+    <van-divider contentPosition="center" customStyle="color: #aaa;border-color: #ccc;font-size: 16px;">尽在家政红黑榜</van-divider>
     <view class="nav-box">
-      <navigator hover-class="none" url="/pages/add/index" class="nav-item"><text>录入红黑榜</text></navigator>
-      <navigator hover-class="none" url="/pages/query/index" class="nav-item"><text>查询红黑榜</text></navigator>
+      <navigator hover-class="none" url="/pages/add/index" class="nav-item">
+        <image class="weather-bg" src="../../assets/entering.png"></image>
+        <text>录入</text>
+      </navigator>
+      <navigator hover-class="none" url="/pages/query/index" class="nav-item nav-item-blue">
+        <image class="weather-bg" src="../../assets/inquire.png"></image>
+        <text>查询</text>
+      </navigator>
     </view>
   </view>
 </view>

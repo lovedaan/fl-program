@@ -1,22 +1,40 @@
 <view class="search-page">
   <view class="search-bar">
-    <van-search
-      value="{{ value }}"
-      placeholder="请输入姓名。手机号、身份证查询"
-      show-action
-      bind:search="onSearch"
-      bind:cancel="onCancel"
-    />
+    <view class="search-box">
+      <van-search
+        value="{{ value }}"
+        placeholder="请输入姓名。手机号、身份证查询"
+        use-action-slot
+        bind:search="onSearch"
+      >
+      </van-search>
+      <view class="sreach-btn" bind:tap="onSearch">搜索</view>
+    </view>
   </view>
   <view class="search-result">
-    <view class="item">
-      <view class="pic"><image src="http://images.jxsg.com/thumb/goods_gallery/wap/2018/09/d1dc1c0916c187f2c2da19a96a165812.jpg"></image></view>
-      <view class="user-info">
-        <view class="user-name">李四</view>
-        <view class="user-phone">15915941956</view>
-        <view class="user-carid">45668***218293</view>
-        <view class="user-desc">因为什么原被拉黑因为什么原被拉黑因为什么原被拉黑因为什么原被拉黑因为什么原被拉黑因为什么原被拉黑因为什么原被拉黑因为什么原被拉黑因为什么原被拉黑因为什么原被拉黑因为什么原被拉黑因为什么原被拉黑因为什么原被拉黑因为什么原被拉黑因为什么原被拉黑因为什么原被拉黑因为什么原被拉黑因为什么原被拉黑因为什么原被拉黑因为什么原被拉黑因为什么原被拉黑因为什么原被拉黑因为什么原被拉黑因为什么原被拉黑因为什么原被拉黑</view>
+    <navigator hover-class="none" url="/pages/particulars/index">
+      <view class="item">
+        <view class="user-info">
+          <view class="user-name">李四</view>
+          <view class="user-phone">15915941956</view>
+          <view class="user-carid">45668***218293</view>
+        </view>
+        <view class="pic">
+          <image src="http://images.jxsg.com/thumb/goods_gallery/wap/2018/09/d1dc1c0916c187f2c2da19a96a165812.jpg"></image>
+        </view>
       </view>
-    </view>
+    </navigator>
+    <navigator hover-class="none" url="/pages/particulars/index">
+      <view class="item">
+        <view class="user-info">
+          <view class="user-name">李四</view>
+          <view class="user-phone">15915941956</view>
+          <view class="user-carid">45668***218293</view>
+        </view>
+        <view class="pic">
+          <image src="http://images.jxsg.com/thumb/goods_gallery/wap/2018/09/d1dc1c0916c187f2c2da19a96a165812.jpg"></image>
+        </view>
+      </view>
+    </navigator>
   </view>
 </view>

@@ -2,7 +2,11 @@
   "pages": [
     "pages/index/index",
     "pages/add/index",
+    
+    "pages/particulars/index",
+    
     "pages/query/index"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,12 +1,44 @@
 /**index.wxss**/
 .container {
   width: 100%;
-  background: #F7F7F7;
+  background: #fff;
+}
+.group-title-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 300rpx;
+  background: linear-gradient(to right,rgb(254, 214, 70),rgb(255, 229, 136));
+}
+.form-container{
+  padding: 0 40rpx 40rpx;
+}
+.group-title-txt{
+  display: flex;
+  padding: 60rpx;
+  height: 180rpx;
+  box-sizing: border-box;
+  border-radius: 30rpx;
+  color: #fff;
+}
+.group-title-txt text{
+  margin-left: 20px;
+  font-weight: 600;
+  font-size: 48rpx;
+}
+.group-icon{
+  display: flex;
+  margin-top: 40rpx;
+  text-align: left;
+}
+ .group-icon image{
+  width: 70rpx;
+  height: 70rpx;
 }
 .group-title {
-  height: 80rpx;
-  line-height: 80rpx;
-  padding-left: 30rpx;
+  margin-left: 20rpx;
+  line-height: 70rpx;
+  text-align: left;
   font-size: 26rpx;
   color: #999;
 }
@@ -15,8 +47,12 @@
   background: #fff;
   padding: 10px 15px;
 }
+.pic-box1 .pic-1 {
+  width: 200rpx;
+}
 .pic-label {
   position: relative;
+  margin-bottom: 10px;
   font-size: 14px;
   width: 90px;
 }
@@ -34,12 +70,12 @@
   justify-content: center;
   border: 1px solid #444;
   border-radius: 10rpx;
-  height: 300rpx;
-  width: 200rpx;
+  height: 200rpx;
+  width: 100%;
 }
 .pic-preview {
   position: relative;
-  height: 300rpx;
+  height: 200rpx;
   width: 200rpx;
 }
 .pic-preview .pre1 {
@@ -54,18 +90,17 @@
   top: 5rpx;
 }
 .pic-box1 .pic-btn image {
-  width: 80rpx;
-  height: 70rpx;
+  width: 50rpx;
+  height: 45rpx;
 }
-.pic-box2 .pic {
-  flex: 1;
+.pic-box2{
+  padding-top: 10px;
 }
-.pic-box2 .pic-preview {
-  width: 100%;
+.pic-box2 .pic, .pic-box2 .pic-btn {
+  height: 200rpx;
+  width: 200rpx;
 }
-.pic-box2 .pic-btn {
-  width: 100%;
-}
+
 .form-footer {
   padding: 45rpx 15rpx;
 }
@@ -81,10 +116,10 @@
   white-space: nowrap;
 }
 .van-radio {
-  margin-right: 60rpx;
+  margin-right: 30rpx;
 }
 .xw-box {
-  padding: 10px 15px;
+  padding: 10px 15px 0;
 }
 .xw-box .label {
   position: relative;
@@ -95,7 +130,9 @@
   flex: 1;
 }
 .xw-textarea {
-  border: 1px solid #ccc;
+  margin: 40rpx 0;
+  padding: 20rpx;
   width: 100%;
-  height: 100px;
+  height: 200px;
+  border: 1px solid #eee;
 }

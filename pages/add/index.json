@@ -4,7 +4,8 @@
     "van-button": "/components/button/index",
     "van-radio": "/components/radio/index",
     "van-radio-group": "/components/radio-group/index",
-    "van-toast": "/components/toast/index"
+    "van-toast": "/components/toast/index",
+    "van-notice-bar": "/components/notice-bar/index"
   },
   "navigationBarTitleText": "录入红黑榜"
 }

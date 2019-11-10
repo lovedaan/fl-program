@@ -1,8 +1,18 @@
 <!--index.wxml-->
 <view class="container">
+  <!-- <view class="group-title-box">
+    <view class="group-title-txt"><icon type="search" size="40" color="#fff" /><text>完善资料</text></view>
+  </view> -->
+  <van-notice-bar
+    left-icon="bullhorn-o"
+    text="必须填真实信息，凡虚报、假报信息的均会拉黑"
+  />
   <view class="form-container">
     <view class="form-group">
-      <view class="group-title">录入者信息</view>
+      <view class="group-icon">
+        <image src="../../assets/blacklist.png" class="imageBox" />
+        <view class="group-title">录入者信息</view>
+      </view>
       <van-cell-group>
         <van-field
           value="{{ user_name }}"
@@ -23,7 +33,10 @@
       </van-cell-group>
     </view>
     <view class="form-group">
-      <view class="group-title">上榜人员\机构信息</view>
+      <view class="group-icon">
+        <image src="/assets/organization.png"></image>
+        <view class="group-title">上榜人员\机构信息</view>
+      </view>
       <view class="ly-type d-flex flex-center">
         <view class="required ly-text">上榜类型</view>
         <van-radio-group class="radio-group d-flex flex-center" value="{{ radio }}" bind:change="onChangeRadio">
@@ -54,15 +67,9 @@
           placeholder="请输入身份证号码"
           bind:blur="onChange"
         />
-        <view class="d-flex xw-box">
-          <view class="label required">具体行为</view>
-          <view class="textarea">
-            <textarea bind:blur="onChange" value="{{r_xw}}" id="r_xw" class="xw-textarea"></textarea>
-          </view>
-        </view>
         <view class="pic-box1">
           <view class="pic-label">相片</view>
-          <view class="pic">
+          <view class="pic pic-1">
             <view class="pic-preview" wx:if="{{pic1}}"><image src="/assets/img/close.png" class="close-btn" bindtap="removeImage" id="pic1"></image><image class="pre1" src="{{pic1}}"></image></view>
             <view bindtap="chooseImage" id="pic1" class="pic-btn" wx:else>
               <image src="/assets/img/photo-icon.png"></image>
@@ -76,6 +83,12 @@
             <view bindtap="chooseImage" id="pic2"  class="pic-btn" wx:else>
               <image src="/assets/img/photo-icon.png"></image>
             </view>
+          </view>
+        </view>
+        <view class="d-flex xw-box">
+          <view class="label required">具体行为</view>
+          <view class="textarea">
+            <textarea bind:blur="onChange" value="{{r_xw}}" id="r_xw" class="xw-textarea"></textarea>
           </view>
         </view>
       </van-cell-group>

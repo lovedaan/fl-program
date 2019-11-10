@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "van-field": "/components/field/index",
+    "van-button": "/components/button/index",
+    "van-radio": "/components/radio/index",
+    "van-radio-group": "/components/radio-group/index",
+    "van-collapse": "/components/collapse/index",
+    "van-collapse-item": "/components/collapse-item/index"
+  },
+  "navigationBarTitleText": "详情"
+}
