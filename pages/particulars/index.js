@@ -5,7 +5,7 @@ const app = getApp()
 Page({
   data: {
     r_radio: '红榜',
-    r_name: '',
+    r_name: '李四',
     r_phone: '15915941956',
     r_id_card: '2144**44234',
     r_xw: '',

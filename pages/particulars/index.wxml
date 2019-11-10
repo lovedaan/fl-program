@@ -1,12 +1,14 @@
 <!--index.wxml-->
 <view class="container detail-page">
-  <view class='header-top'>
-    <image class='touxiang' src="http://statics.jxsg.com/mnew/images/default_avatar.png"></image>
-    <text>李四</text>
-  </view>
   <view class="form-container">
     <view class="form-group">
       <van-cell-group>
+        <van-field
+          value="{{ r_name }}"
+          label="姓名或机构名"
+          id="r_radio"
+          disabled
+        />
         <van-field
           value="{{ r_radio }}"
           label="上榜类型"
@@ -27,6 +29,14 @@
           disabled
         />
         
+        <view class="pic-box1">
+          <view class='box1'>
+            <view class="pic-label">机构或个人相片</view>
+            <view class="pic">
+              <image class="pre1" src="{{pic1}}"></image>
+            </view>
+          </view>
+        </view>
         <view class="pic-box1">
           <view class='box1'>
             <view class="pic-label">身份证</view>

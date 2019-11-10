@@ -10,7 +10,6 @@
   <view class="form-container">
     <view class="form-group">
       <view class="group-icon">
-        <image src="../../assets/blacklist.png" class="imageBox" />
         <view class="group-title">录入者信息</view>
       </view>
       <van-cell-group>
@@ -34,7 +33,6 @@
     </view>
     <view class="form-group">
       <view class="group-icon">
-        <image src="/assets/organization.png"></image>
         <view class="group-title">上榜人员\机构信息</view>
       </view>
       <view class="ly-type d-flex flex-center">
@@ -48,9 +46,9 @@
         <van-field
           value="{{ r_name }}"
           required
-          label="姓名"
+          label="姓名或机构名"
           id="r_name"
-          placeholder="请输入姓名"
+          placeholder="请输入姓名或机构名"
           bind:blur="onChange"
         />
         <van-field
@@ -68,7 +66,7 @@
           bind:blur="onChange"
         />
         <view class="pic-box1">
-          <view class="pic-label">相片</view>
+          <view class="pic-label">机构或个人相片</view>
           <view class="pic pic-1">
             <view class="pic-preview" wx:if="{{pic1}}"><image src="/assets/img/close.png" class="close-btn" bindtap="removeImage" id="pic1"></image><image class="pre1" src="{{pic1}}"></image></view>
             <view bindtap="chooseImage" id="pic1" class="pic-btn" wx:else>
@@ -85,7 +83,7 @@
             </view>
           </view>
         </view>
-        <view class="d-flex xw-box">
+        <view class="xw-box">
           <view class="label required">具体行为</view>
           <view class="textarea">
             <textarea bind:blur="onChange" value="{{r_xw}}" id="r_xw" class="xw-textarea"></textarea>

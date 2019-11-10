@@ -11,7 +11,7 @@
   background: linear-gradient(to right,rgb(254, 214, 70),rgb(255, 229, 136));
 }
 .form-container{
-  padding: 0 40rpx 40rpx;
+  padding: 0 20rpx 40rpx;
 }
 .group-title-txt{
   display: flex;
@@ -28,7 +28,6 @@
 }
 .group-icon{
   display: flex;
-  margin-top: 40rpx;
   text-align: left;
 }
  .group-icon image{
@@ -36,11 +35,10 @@
   height: 70rpx;
 }
 .group-title {
-  margin-left: 20rpx;
   line-height: 70rpx;
-  text-align: left;
-  font-size: 26rpx;
-  color: #999;
+  font-size: 36rpx;
+  color: #000;
+  font-weight: bold;
 }
 .pic-box1 {
   display: flex;
@@ -130,9 +128,8 @@
   flex: 1;
 }
 .xw-textarea {
-  margin: 40rpx 0;
+  margin: 20rpx 0;
   padding: 20rpx;
-  width: 100%;
   height: 200px;
   border: 1px solid #eee;
 }
