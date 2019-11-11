@@ -45,7 +45,6 @@
 .item .pic image {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
 }
 .user-name{
   margin-bottom: 20rpx;
@@ -91,24 +90,4 @@
   margin-bottom: 50rpx;
   width: 240rpx;
   height: 240rpx;
-}
-
-.zj-list .zj-item {
-  border-radius: 10rpx;
-  box-shadow: 3px 3px 3px 0px #eee;
-  padding: 25rpx;
-  margin-bottom: 20rpx;
-}
-.zj-list .zj-item .zj-line{
-  font-size: 32rpx;
-  line-height: 48rpx;
-}
-.zj-list .zj-item  .zj-pic{
-  width: 100%;
-  height: 200rpx;
-  margin-top: 20rpx;
-}
-.zj-list .zj-item  .zj-pic image {
-  width: 100%;
-  height: 100%;
 }

@@ -2,5 +2,5 @@
   "usingComponents": {
     "van-search": "/components/search/index"
   },
-  "navigationBarTitleText": "查询服务人员"
+  "navigationBarTitleText": "查询授权培训点"
 }

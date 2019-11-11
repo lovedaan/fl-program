@@ -1,19 +1,18 @@
-// pages/add/index.js
+// pages/query/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    background: ['/assets/img/3.jpg', '/assets/img/4.jpg'],
-    indicatorDots: true,
-    vertical: false,
-    autoplay: true,
-    circular: true,
-    interval: 2000,
-    duration: 500
+    value: '',
   },
+  onSearch() {
 
+  },
+  onCancel() {
+    
+  },
   /**
    * 生命周期函数--监听页面加载
    */

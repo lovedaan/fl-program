@@ -1,17 +1,17 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/query/index",
     "pages/add/index",
     
-    "pages/query/index",
-    
+    "pages/index/index",
+    "pages/query1/index",
     "pages/particulars/index"
     
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "家政行业红黑榜",
+    "navigationBarTitleText": "携家认证",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json"

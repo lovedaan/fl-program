@@ -12,7 +12,7 @@
     </view>
   </view>
   <view class="search-result" wx:if="{{true}}">
-    <view>
+    <navigator hover-class="none" url="/pages/particulars/index">
       <view class="item">
         <view class="user-info">
           <view class="user-name">李四</view>
@@ -23,23 +23,19 @@
           <image src="http://images.jxsg.com/thumb/goods_gallery/wap/2018/09/d1dc1c0916c187f2c2da19a96a165812.jpg"></image>
         </view>
       </view>
-    </view>
-    <view class='zj-list'>
-        <view class='zj-item'>
-          <view class='zj-line'>证件类型：医护证</view>
-          <view class='zj-line'>证件有效期：2019年11月10日</view>
-          <view class='zj-pic'>
-            <image src="http://images.jxsg.com/thumb/goods_gallery/wap/2018/09/d1dc1c0916c187f2c2da19a96a165812.jpg"></image>
-          </view>
+    </navigator>
+    <navigator hover-class="none" url="/pages/particulars/index">
+      <view class="item">
+        <view class="user-info">
+          <view class="user-name">李四</view>
+          <view class="user-phone">15915941956</view>
+          <view class="user-carid">45668***218293</view>
         </view>
-        <view class='zj-item'>
-          <view class='zj-line'>证件类型：医护证</view>
-          <view class='zj-line'>证件有效期：2019年11月10日</view>
-          <view class='zj-pic'>
-            <image src="http://images.jxsg.com/thumb/goods_gallery/wap/2018/09/d1dc1c0916c187f2c2da19a96a165812.jpg"></image>
-          </view>
+        <view class="pic">
+          <image src="http://images.jxsg.com/thumb/goods_gallery/wap/2018/09/d1dc1c0916c187f2c2da19a96a165812.jpg"></image>
         </view>
-    </view>
+      </view>
+    </navigator>
   </view>
   <view class='no-page' wx:else>
     <image src='/assets/ndata.png'></image>
