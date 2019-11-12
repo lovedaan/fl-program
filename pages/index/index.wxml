@@ -10,10 +10,6 @@
       </swiper>
   </view>
   <view class="nav-wrap">
-    <view class="line-title">
-      <image class="weather-logo" src="../../assets/logo.jpg"></image>
-      <text>- 您 身 边 的 护 理 专 家 -</text>
-    </view>
     <van-divider contentPosition="center" customStyle="color: #aaa;border-color: #ccc;font-size: 16px;">携家认证精准查询</van-divider>
     <view class="nav-box">
       <navigator hover-class="none" url="/pages/query1/index" class="nav-item">
