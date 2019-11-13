@@ -1,48 +1,13 @@
-const date = new Date()
-const years = []
-const months = []
-const days = []
-
-for (let i = 1990; i <= date.getFullYear(); i++) {
-  years.push(i)
-}
-
-for (let i = 1; i <= 12; i++) {
-  months.push(i)
-}
-
-for (let i = 1; i <= 31; i++) {
-  days.push(i)
-}
-
+// pages/detail/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    years: years,
-    year: date.getFullYear(),
-    months: months,
-    month: 2,
-    region: ['广东省', '广州市', '海珠区'],
-    customItem: '全部',
-    address: '',
-    value: '',
+
   },
-  bindChange: function (e) {
-    const val = e.detail.value
-    this.setData({
-      year: this.data.years[val[0]],
-      month: this.data.months[val[1]]
-    })
-  },
-  bindRegionChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      address: e.detail.value.splice(0, 2).join(' ')
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */

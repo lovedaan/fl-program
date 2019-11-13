@@ -14,11 +14,11 @@
     <view class="nav-box">
       <navigator hover-class="none" url="/pages/query1/index" class="nav-item">
         <image class="weather-bg" src="../../assets/inquire.png"></image>
-        <text>查询授权\n培训点</text>
+        <text>查询授权培训点</text>
       </navigator>
       <navigator hover-class="none" url="/pages/query/index" class="nav-item nav-item-blue">
         <image class="weather-bg" src="../../assets/inquire.png"></image>
-        <text>查询服务\n人员</text>
+        <text>查询服务人员</text>
       </navigator>
     </view>
   </view>

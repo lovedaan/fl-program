@@ -1,43 +1,38 @@
-<view class="search-page">
-  <view class="search-bar">
-    <view class="search-box">
-      <van-search
-        value="{{ value }}"
-        placeholder="认证编码、手机号、身份证号"
-        use-action-slot
-        bind:search="onSearch"
-      >
-      </van-search>
-      <view class="sreach-btn" bind:tap="onSearch">搜索</view>
+<view class="search-page2">
+  <!-- 头部选择 -->
+  <view class="address-top">
+    <view class="address-top-com">
+      <view class="address-label"> <image class="addres-icon" src="/assets/addres-icon.png"></image>{{address || '定位失败'}}</view>
+      
+      <picker mode="region" class="address-select" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="address-picker">
+          <text>选择其他地区</text><image class="arrow2" src="/assets/arrow2.png"></image>
+        </view>
+      </picker>
     </view>
   </view>
-  <view class="search-result" wx:if="{{true}}">
-    <navigator hover-class="none" url="/pages/particulars/index">
-      <view class="item">
-        <view class="user-info">
-          <view class="user-name">李四</view>
-          <view class="user-phone">15915941956</view>
-          <view class="user-carid">45668***218293</view>
-        </view>
-        <view class="pic">
-          <image src="http://images.jxsg.com/thumb/goods_gallery/wap/2018/09/d1dc1c0916c187f2c2da19a96a165812.jpg"></image>
-        </view>
+
+  <view class="address-list">
+    <navigator hover-class="none" url="/pages/detail/index" class="address-item">
+      <view class="a-title">大几岁培训机构</view>
+      <view class="d-info">
+        <view class="d-line">所在地区：广东省广州市</view>
+        <view class="d-line">联系电话：12132123133</view>
+        <view class="d-line">培训课程：会计师的记录卡卡视角等</view>
+        <text class="d-btn">查看详情</text>
       </view>
     </navigator>
-    <navigator hover-class="none" url="/pages/particulars/index">
-      <view class="item">
-        <view class="user-info">
-          <view class="user-name">李四</view>
-          <view class="user-phone">15915941956</view>
-          <view class="user-carid">45668***218293</view>
-        </view>
-        <view class="pic">
-          <image src="http://images.jxsg.com/thumb/goods_gallery/wap/2018/09/d1dc1c0916c187f2c2da19a96a165812.jpg"></image>
-        </view>
+    <navigator hover-class="none" url="/pages/detail/index" class="address-item">
+      <view class="a-title">大几岁培训机构</view>
+      <view class="d-info">
+        <view class="d-line">所在地区：广东省广州市</view>
+        <view class="d-line">联系电话：12132123133</view>
+        <view class="d-line">培训课程：会计师的记录卡卡视角等</view>
+        <text class="d-btn">查看详情</text>
       </view>
     </navigator>
   </view>
-  <view class='no-page' wx:else>
+  <view class='no-page'>
     <image src='/assets/ndata.png'></image>
     <view class='text'>没有相关信息！</view>
   </view>

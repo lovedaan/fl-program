@@ -21,10 +21,10 @@
   padding: 40rpx;
 }
 .sreach-btn {
-  width: 108rpx;
-  height: 108rpx;
+  width: 100rpx;
+  height: 100rpx;
   text-align: center;
-  line-height: 108rpx;
+  line-height: 100rpx;
   border: 1px solid #ccc;
   background: #fff;
   box-sizing: border-box;
@@ -95,7 +95,7 @@
 
 .zj-list .zj-item {
   border-radius: 10rpx;
-  box-shadow: 3px 3px 3px 0px #eee;
+  box-shadow: 0px 0px 3px #777;
   padding: 25rpx;
   margin-bottom: 20rpx;
 }

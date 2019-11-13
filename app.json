@@ -1,11 +1,12 @@
 {
   "pages": [
+    "pages/query1/index",
     "pages/index/index",
     "pages/query/index",
     "pages/add/index",
     
+    "pages/detail/index",
     
-    "pages/query1/index",
     "pages/particulars/index"
     
   ],
