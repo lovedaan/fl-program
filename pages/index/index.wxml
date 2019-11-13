@@ -11,10 +11,10 @@
   </view>
   <view class="nav-wrap">
     <view class="line-title">
-      <image class="weather-logo" src="../../assets/logo.jpg"></image>
+      <!-- <image class="weather-logo" src="../../assets/logo.jpg"></image> -->
       <text>- 查家政公司、家政人员、雇主信誉 -</text>
     </view>
-    <van-divider contentPosition="center" customStyle="color: #aaa;border-color: #ccc;font-size: 16px;">尽在家政红黑榜</van-divider>
+    <van-divider contentPosition="center" customStyle="color: #aaa;border-color: #ccc;font-size: 20px;">尽在家政红黑榜</van-divider>
     <view class="nav-box">
       <navigator hover-class="none" url="/pages/add/index" class="nav-item">
         <image class="weather-bg" src="../../assets/entering.png"></image>
