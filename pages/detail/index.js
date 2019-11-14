@@ -1,18 +1,28 @@
-// pages/detail/index.js
+
+import { getLocation } from '../../utils/index.js';
+
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    longitude: '',
+    latitude: '',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    getLocation().then(res => {
+      console.log(res);
+      this.setData({
+        longitude: res.longitude,
+        latitude: res.latitude
+      });
+    })
   },
 
   /**

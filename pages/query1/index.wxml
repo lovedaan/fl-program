@@ -13,24 +13,35 @@
   </view>
 
   <view class="address-list">
-    <navigator hover-class="none" url="/pages/detail/index" class="address-item">
-      <view class="a-title">大几岁培训机构</view>
-      <view class="d-info">
-        <view class="d-line">所在地区：广东省广州市</view>
-        <view class="d-line">联系电话：12132123133</view>
-        <view class="d-line">培训课程：会计师的记录卡卡视角等</view>
-        <text class="d-btn">查看详情</text>
+    <view class="address-item">
+      <!-- <view class="map">
+        <map latitude="{{latitude}}" longitude="{{longitude}}"></map>
+      </view> -->
+      <view class="train-list">
+        <navigator hover-class="none" url="/pages/detail/index" class="train-item">
+          <view class="left-pic">
+            <image mode="aspectFill" class="pic" src="https://images.jxsg.com/seckill_hot_img/2019/11/1a17c504ff139b7c81c5b077d46fe1cb.jpg" />
+            <!-- <text>暂无图片</text> -->
+          </view>
+          <view class="right-info">
+            <view class="i-line">建档立卡是机构</view>
+            <view class="i-line">广州大道南路口</view>
+            <view class="i-line">136454554</view>
+          </view>
+        </navigator>
+        <navigator hover-class="none" url="/pages/detail/index" class="train-item">
+          <view class="left-pic">
+            <image mode="aspectFill" class="pic" src="https://images.jxsg.com/seckill_hot_img/2019/11/1a17c504ff139b7c81c5b077d46fe1cb.jpg" />
+            <!-- <text>暂无图片</text> -->
+          </view>
+          <view class="right-info">
+            <view class="i-line">建档立卡是机构</view>
+            <view class="i-line">广州大道南路口</view>
+            <view class="i-line">136454554</view>
+          </view>
+        </navigator>
       </view>
-    </navigator>
-    <navigator hover-class="none" url="/pages/detail/index" class="address-item">
-      <view class="a-title">大几岁培训机构</view>
-      <view class="d-info">
-        <view class="d-line">所在地区：广东省广州市</view>
-        <view class="d-line">联系电话：12132123133</view>
-        <view class="d-line">培训课程：会计师的记录卡卡视角等</view>
-        <text class="d-btn">查看详情</text>
-      </view>
-    </navigator>
+    </view>
   </view>
   <view class='no-page'>
     <image src='/assets/ndata.png'></image>

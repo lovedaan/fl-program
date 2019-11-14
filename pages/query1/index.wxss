@@ -1,9 +1,10 @@
-
+page {
+  background: #f2f2f2;
+}
 .search-page2 {
   width: 100%;
-  height: 100%;
   background: #f2f2f2;
-  padding-top: 10rpx;
+  padding-top: 20rpx;
 }
 .address-top {
   height: 100rpx;
@@ -12,9 +13,9 @@
   margin-bottom: 20rpx;
 }
 .address-label {
+  flex: 1;
   display: flex;
   align-items: center;
-  width: 240rpx;
   font-size: 28rpx;
 }
 .address-top-com {
@@ -28,13 +29,12 @@
 }
 .address-select {
   height: 100rpx;
-  flex: 1;
 }
 
 .address-picker {
   display: flex;
   height: 100rpx;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   font-size: 28rpx;
 }
@@ -42,12 +42,16 @@
 .arrow2 {
   width: 22rpx;
   height: 30rpx;
+  margin-left: 15rpx;
 }
 
 .address-item {
   padding: 20rpx;
   background: #fff;
-  margin-block-start: 20rpx;
+  margin-bottom: 20rpx;
+}
+.address-item:last-child {
+  margin-bottom: 0;
 }
 .address-item .a-title {
   font-weight: bold;
@@ -90,4 +94,47 @@
   margin-bottom: 50rpx;
   width: 240rpx;
   height: 240rpx;
+}
+
+.map, .map map {
+  width: 100%;
+  height: 400rpx;
+}
+.train-list {
+  padding-top: 15rpx;
+}
+.train-item {
+  display: flex;
+  margin-bottom: 15rpx;
+}
+.train-item .left-pic {
+  width: 240rpx;
+  height: 150rpx;
+  text-align: center;
+  line-height: 150rpx;
+  background: #ccc;
+  margin-right: 15rpx;
+}
+.train-item .left-pic image {
+  width: 100%;
+  height: 100%;
+}
+.train-item .left-pic text {
+  font-size: 38rpx;
+  color: #222;
+}
+.train-item .right-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 26rpx;
+  color: #888;
+  padding: 10rpx 0;
+}
+.train-item .right-info .i-line {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

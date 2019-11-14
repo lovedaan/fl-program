@@ -1,1 +1,73 @@
-/* pages/detail/index.wxss */
+.detail-page {
+  width: 100%;
+  height: 100%;
+  background: #f2f2f2;
+  padding-top: 20rpx;
+}
+.detail-top {
+  padding: 20rpx;
+  background: #fff;
+}
+.detail-top .top-pic {
+  margin-bottom: 15rpx;
+}
+.detail-top .top-pic,.detail-top .top-pic image {
+  width: 100%;
+  height: 250rpx;
+}
+.t-title,.c-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 15rpx;
+}
+.t-line {
+  font-size: 26rpx;
+  line-height: 42rpx;
+  color: #888;
+}
+.red {
+  color: #F24E5A;
+}
+.px-line {
+  font-size: 26rpx;
+  color: #888;
+}
+.t-time {
+  padding: 30rpx 0;
+  font-size: 26rpx;
+}
+.px-line .px-item {
+  padding: 10rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.px-line .px-item .p-title {
+  margin-bottom: 8rpx;
+  font-size: 27rpx;
+  color: #555;
+}
+.px-line text {
+  color: #222;
+  font-size: 30rpx;
+}
+.px-shupm {
+  margin-top: 20rpx;
+}
+.px-shupm .px-title{
+  color: #222;
+  font-size: 30rpx;
+  margin-bottom: 15rpx;
+}
+.px-shupm .px-text {
+  font-size: 26rpx;
+  color: #666;
+}
+.detail-com {
+  padding: 20rpx;
+  background: #fff;
+  margin-top: 20rpx;
+}
+
+.map, .map map {
+  width: 100%;
+  height: 400rpx;
+}
