@@ -1,21 +1,24 @@
+page {
+  background: #f2f2f2;
+}
 .detail-page {
   width: 100%;
-  height: 100%;
-  background: #f2f2f2;
-  padding-top: 20rpx;
 }
-.detail-top {
+.detail-top .top-pic {
+  overflow: hidden;
+  background: #fff;
+}
+.box1 {
   padding: 20rpx;
   background: #fff;
 }
-.detail-top .top-pic {
-  margin-bottom: 15rpx;
-}
 .detail-top .top-pic,.detail-top .top-pic image {
-  width: 100%;
   height: 250rpx;
 }
-.t-title,.c-title {
+.top-pic image {
+  width: 100%;
+}
+.t-title {
   font-size: 36rpx;
   font-weight: bold;
   margin-bottom: 15rpx;
@@ -28,45 +31,71 @@
 .red {
   color: #F24E5A;
 }
-.px-line {
+.px-ketang {
   font-size: 26rpx;
   color: #888;
+  background: #fff;
 }
 .t-time {
   padding: 30rpx 0;
   font-size: 26rpx;
 }
-.px-line .px-item {
+.px-ketang .px-item {
   padding: 10rpx;
-  border-bottom: 1rpx solid #eee;
+  border-bottom: 1rpx dashed #eee;
 }
-.px-line .px-item .p-title {
+.px-ketang .px-item .p-title {
   margin-bottom: 8rpx;
   font-size: 27rpx;
-  color: #555;
+  color: #222;
+
 }
-.px-line text {
+.px-ketang .px-title {
   color: #222;
   font-size: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 20rpx;
+  border-bottom: 1rpx solid #eee;
+  font-weight: bold;
+}
+.px-wrap {
+  padding: 20rpx;
 }
 .px-shupm {
   margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  background: #fff;
+  padding-bottom: 20rpx;
 }
 .px-shupm .px-title{
-  color: #222;
+  color: #111;
   font-size: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #eee;
   margin-bottom: 15rpx;
+  padding: 0 20rpx;
+  font-weight: bold;
 }
 .px-shupm .px-text {
   font-size: 26rpx;
   color: #666;
-}
-.detail-com {
-  padding: 20rpx;
-  background: #fff;
-  margin-top: 20rpx;
+  padding: 0 20rpx;
 }
 
+.detail-com {
+  margin-top: 20rpx;
+  background: #fff;
+  padding: 0 20rpx 20rpx;
+}
+.c-title {
+  font-size: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #222;
+  font-weight: bold;
+}
 .map, .map map {
   width: 100%;
   height: 400rpx;

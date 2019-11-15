@@ -1,0 +1,74 @@
+page {
+  background: #f2f2f2;
+}
+.detail2-top {
+  padding: 0 30rpx;
+  align-items: center;
+  height: 250rpx;
+  background:linear-gradient(270deg,rgba(248,121,121,1) 0%,rgba(242,78,90,1) 100%);
+}
+.touxiang {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.user-bd {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 28rpx;
+}
+.user-bd .user-name {
+  margin-bottom: 20rpx;
+}
+.jiben {
+  margin-top: 20rpx;
+  background: #fff;
+}
+.jiben .jb-title, .zj-type .zj-title {
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 30rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  border-bottom: 1rpx solid #eee;
+}
+.jb-com {
+  padding: 15rpx 30rpx;
+  font-size: 28rpx;
+  color: #666;
+  line-height: 50rpx;
+}
+.zj-type {
+  background: #fff;
+  margin-top: 20rpx;
+}
+.zj-box {
+  padding: 0 30rpx 20rpx;
+}
+.zj-box .zj-item {
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+.zj-box .zj-item .zj-pic {
+  width: 200rpx;
+  height: 150rpx;
+  margin-right: 20rpx;
+}
+.zj-box .zj-item .zj-pic image {
+  width: 100%;
+  height: 100%;
+}
+.zj-box .zj-item .zj-info {
+  padding: 20rpx 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 26rpx;
+  color: #777;
+}
+.zj-box .zj-item .zj-info .zj-name {
+  font-size: 28rpx;
+  color: #222;
+}

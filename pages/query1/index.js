@@ -23,7 +23,7 @@ Page({
   },
   bindRegionChange: function (e) {
     this.setData({
-      address: e.detail.value
+      address: e.detail.value.splice(0,2)
     })
     this.getAddress(e.detail.value.toString());
   },
