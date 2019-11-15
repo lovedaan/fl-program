@@ -4,7 +4,7 @@
     <view class="address-top-com">
       <view class="address-label"> <image class="addres-icon" src="/assets/addres-icon.png"></image>{{address || '定位失败'}}</view>
       
-      <picker mode="region" class="address-select" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
         <view class="address-picker">
           <text>选择其他地区</text><image class="arrow2" src="/assets/arrow2.png"></image>
         </view>
