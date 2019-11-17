@@ -1,8 +1,14 @@
+export const showToast = (title = '', duration = 2000) => {
+  wx.showToast({
+    title,
+    icon: 'none',
+    duration
+  })
+}
 export function request(url = '', data = {}, method = 'get', isLoading = false) {
   isLoading && wx.showLoading({
     title: '加载中...',
   });
-  console.log(url);
   return new Promise((resolve, reject) => {
     wx.request({
       url,

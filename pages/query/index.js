@@ -1,4 +1,5 @@
-// pages/query/index.js
+import { findWaiterList } from '../../utils/api.js';
+import { showToast } from '../../utils/index.js';
 Page({
 
   /**
@@ -6,12 +7,22 @@ Page({
    */
   data: {
     value: '',
+    isNodata: false,
+    resultList: [],
   },
-  onSearch() {
-
+  onSearch(e) {
+    if(!this.data.value) {
+      showToast('请求输入认证编码、手机号、身份证号之一查询')
+      return;
+    }
+    findWaiterList({ code: this.data.value}, 'post', true).then(res => {
+      console.log(res);
+    }).catch(err => {
+      console.log(err);
+    });
   },
-  onCancel() {
-    
+  handelInput(e) {
+    this.data.value = e.detail;
   },
   /**
    * 生命周期函数--监听页面加载

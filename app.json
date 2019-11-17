@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/query/index",
     "pages/index/index",
     "pages/detail2/index",
-    "pages/query/index",
+    
     
     "pages/detail/index",
     "pages/query1/index",

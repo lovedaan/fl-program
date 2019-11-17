@@ -21,13 +21,12 @@
   padding: 40rpx;
 }
 .sreach-btn {
-  width: 100rpx;
-  height: 100rpx;
+  width: 102rpx;
+  height: 105rpx;
   text-align: center;
-  line-height: 100rpx;
-  border: 1px solid #ccc;
+  line-height: 105rpx;
+  border: 1rpx solid #ccc;
   background: #fff;
-  box-sizing: border-box;
 }
 .item {
   display: flex;

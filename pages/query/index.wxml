@@ -5,14 +5,14 @@
         value="{{ value }}"
         placeholder="认证编码、手机号、身份证号"
         use-action-slot
-        bind:search="onSearch"
+        bind:change="handelInput"
       >
       </van-search>
       <view class="sreach-btn" bind:tap="onSearch">搜索</view>
     </view>
   </view>
   <view class="search-result">
-    <view>
+    <view wx:if="{{resultList.length > 0}}">
       <navigator hover-class="none" url="/pages/detail2/index" class="item">
         <view class="user-info">
           <view class="user-name">李四</view>
@@ -24,24 +24,8 @@
         </view>
       </navigator>
     </view>
-    <!-- <view class='zj-list'>
-        <view class='zj-item'>
-          <view class='zj-line'>证件类型：医护证</view>
-          <view class='zj-line'>证件有效期：2019年11月10日</view>
-          <view class='zj-pic'>
-            <image src="http://images.jxsg.com/thumb/goods_gallery/wap/2018/09/d1dc1c0916c187f2c2da19a96a165812.jpg"></image>
-          </view>
-        </view>
-        <view class='zj-item'>
-          <view class='zj-line'>证件类型：医护证</view>
-          <view class='zj-line'>证件有效期：2019年11月10日</view>
-          <view class='zj-pic'>
-            <image src="http://images.jxsg.com/thumb/goods_gallery/wap/2018/09/d1dc1c0916c187f2c2da19a96a165812.jpg"></image>
-          </view>
-        </view>
-    </view> -->
   </view>
-  <view class='no-page'>
+  <view class='no-page' wx:if="{{isNodata}}">
     <image src='/assets/ndata.png'></image>
     <view class='text'>没有相关信息！</view>
   </view>
