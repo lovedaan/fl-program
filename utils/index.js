@@ -14,6 +14,9 @@ export function request(url = '', data = {}, method = 'get', isLoading = false) 
       url,
       method,
       data,
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
       success(res) {
         isLoading && wx.hideLoading();
         resolve(res.data);

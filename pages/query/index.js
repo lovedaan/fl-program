@@ -11,12 +11,23 @@ Page({
     resultList: [],
   },
   onSearch(e) {
+    this.setData({
+      isNodata: false
+    });
     if(!this.data.value) {
       showToast('请求输入认证编码、手机号、身份证号之一查询')
       return;
     }
     findWaiterList({ code: this.data.value}, 'post', true).then(res => {
-      console.log(res);
+      if(res.data.data && res.data.data.length) {
+        this.setData({
+          resultList: res.data.data
+        });
+      }else {
+        this.setData({
+          isNodata: true
+        });
+      }
     }).catch(err => {
       console.log(err);
     });
