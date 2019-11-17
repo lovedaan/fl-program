@@ -4,19 +4,19 @@
     <view class="form-group">
       <van-cell-group>
         <van-field
-          value="{{ r_name }}"
+          value="{{ rankInfo.name }}"
           label="姓名或机构名"
           id="r_radio"
           disabled
         />
         <van-field
-          value="{{ r_phone }}"
+          value="{{ rankInfo.mobile }}"
           label="电话"
           id="r_phone"
           disabled
         />
         <van-field
-          value="{{ r_id_card }}"
+          value="{{ rankInfo.idCard }}"
           label="身份证号"
           id="r_id_card"
           disabled
@@ -26,7 +26,7 @@
           <view class='box1'>
             <view class="pic-label">机构或个人相片</view>
             <view class="pic">
-              <image class="pre1" src="{{pic1}}"></image>
+              <image class="pre1" mode="aspectFill" src="{{rankInfo.headImg}}"></image>
             </view>
           </view>
         </view>
@@ -34,27 +34,17 @@
           <view class='box1'>
             <view class="pic-label">身份证</view>
             <view class="pic">
-              <image class="pre1" src="{{pic2}}"></image>
+              <image class="pre1" mode="aspectFill" src="{{rankInfo.idCardImg}}"></image>
             </view>
           </view>
         </view>
         <view class="xw-box">
           <view class="label">红黑榜记录</view>
           <view class="xw-list">
-            <view  class='xw-item'>
-              <view class="xw-item-title"><text>李四</text><text>上榜类型：红榜</text></view>
-              <view class='item-text'>昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的</view>
-              <view class='item-time'><text>2019年11月8日</text></view>
-            </view>
-            <view  class='xw-item'>
-              <view class="xw-item-title"><text>李四</text><text>上榜类型：红榜</text></view>
-              <view class='item-text'>昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的</view>
-              <view class='item-time'><text>2019年11月8日</text></view>
-            </view>
-            <view  class='xw-item'>
-              <view class="xw-item-title"><text>李四</text><text>上榜类型：红榜</text></view>
-              <view class='item-text'>昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的昆德拉SDK冷恋时代 的</view>
-              <view class='item-time'><text>2019年11月8日</text></view>
+            <view  class='xw-item' wx:for="{{reasonList}}" wx:key="index">
+              <view class="xw-item-title"><text>{{item.createUser}}</text><text>上榜类型：{{item.type}}</text></view>
+              <view class='item-text'>{{item.reason}}</view>
+              <view class='item-time'><text>{{item.dateCreated}}</text></view>
             </view>
           </view>
         </view>

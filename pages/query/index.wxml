@@ -5,39 +5,28 @@
         value="{{ value }}"
         placeholder="姓名、机构名、电话、身份证"
         use-action-slot
-        bind:search="onSearch"
+        bind:change="onChange"
       >
       </van-search>
       <view class="sreach-btn" bind:tap="onSearch">搜索</view>
     </view>
   </view>
-  <view class="search-result" wx:if="{{true}}">
+  <view class="search-result" wx:if="{{rankInfo.id}}">
     <navigator hover-class="none" url="/pages/particulars/index">
       <view class="item">
         <view class="user-info">
-          <view class="user-name">李四</view>
-          <view class="user-phone">15915941956</view>
-          <view class="user-carid">45668***218293</view>
+          <view class="user-name">{{rankInfo.name}}</view>
+          <view class="user-phone">{{rankInfo.mobile}}</view>
+          <view class="user-carid">{{rankInfo.idCard}}</view>
         </view>
         <view class="pic">
-          <image src="http://images.jxsg.com/thumb/goods_gallery/wap/2018/09/d1dc1c0916c187f2c2da19a96a165812.jpg"></image>
-        </view>
-      </view>
-    </navigator>
-    <navigator hover-class="none" url="/pages/particulars/index">
-      <view class="item">
-        <view class="user-info">
-          <view class="user-name">李四</view>
-          <view class="user-phone">15915941956</view>
-          <view class="user-carid">45668***218293</view>
-        </view>
-        <view class="pic">
-          <image src="http://images.jxsg.com/thumb/goods_gallery/wap/2018/09/d1dc1c0916c187f2c2da19a96a165812.jpg"></image>
+          <image mode="aspectFill" src="{{rankInfo.headImg}}"></image>
         </view>
       </view>
     </navigator>
   </view>
-  <view class='no-page' wx:else>
+  <view class='no-page' wx:if="{{isNodata}}">
+    <image src="/assets/ndata.png" class='ndata-icon'></image>
     <view class='text'>你查询的人或机构尚未有红黑榜记录</view>
     <navigator hover-class="none" url="/pages/add/index" class="home-btn">我要录入红黑榜</navigator>
   </view>

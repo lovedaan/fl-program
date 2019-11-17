@@ -1,4 +1,6 @@
-// pages/query/index.js
+import { findHhbList } from '../../utils/api.js';
+import { showToast } from '../../utils/index.js';
+const app = getApp();
 Page({
 
   /**
@@ -6,12 +8,39 @@ Page({
    */
   data: {
     value: '',
+    isNodata: false,
+    rankInfo: {},
+    reasonList: [],
   },
   onSearch() {
-
+    this.setData({
+      isNodata: false
+    });
+    if(!this.data.value) {
+      showToast('请输入姓名、机构名、电话、身份证查询');
+      return;
+    }
+    findHhbList({ code: this.data.value}, 'post', true).then(res => {
+      if (res.data.retCode == '0') {
+        app.globalData.queryData = {
+          reasonList: res.data.data.reasonList,
+          rankInfo: res.data.data.rank,
+        };
+        this.setData({
+          reasonList: res.data.data.reasonList,
+          rankInfo: res.data.data.rank,
+          value: ''
+        });
+      }else {
+        this.setData({
+          isNodata: true,
+          value: ''
+        });
+      }
+    })
   },
-  onCancel() {
-    
+  onChange(e) {
+    this.data.value = e.detail;
   },
   /**
    * 生命周期函数--监听页面加载

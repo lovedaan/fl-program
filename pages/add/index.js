@@ -1,5 +1,6 @@
-
-import Toast from '../../components/toast/toast';
+import { saveHmd, uploadFile } from '../../utils/api.js';
+import { showToast } from '../../utils/index.js';
+import config from '../../config/index.js';
 const app = getApp()
 
 Page({
@@ -27,34 +28,54 @@ Page({
   submit() {
     let { user_name, user_phone, r_name, r_phone, r_id_card, r_xw, pic1, pic2, radio} = this.data;
     if (!user_name) {
-      Toast('请输入录用者姓名~');
+      showToast('请输入姓名~');
       return;
     }
     if (!user_phone) {
-      Toast('请输入录用者手机号码~');
+      showToast('请输入手机号码~');
       return;
     }
 
     if (!r_name) {
-      Toast('请输入录上榜人员姓名~');
+      showToast('请输入录上榜人员姓名或机构名~');
       return;
     }
     if (!r_phone && !r_id_card) {
-      Toast('请输入录上榜人员手机号码或身份证号码~');
+      showToast('请输入录上榜人员手机号码或身份证号码~');
       return;
     }
     if (!r_xw) {
-      Toast('请输入录用者的具体行为~');
+      showToast('请输入录用者的具体行为~');
       return;
     }
     if (r_xw.length > 200) {
-      Toast('录用者具体行为不能超过200个字~');
+      showToast('录用者具体行为不能超过200个字~');
       return;
     }
+    let data = {
+      disabled: false,
+      openId: app.globalData.openId,
+      createMobile: user_phone,
+      createUser: user_name,
+      type: radio,
+      state: 1,
+      name: r_name,
+      mobile: r_phone,
+      idCard: r_id_card,
+      idCardImg: pic2,
+      headImg: pic1,
+      sex: 0,
+      address: '',
+      reason: r_xw
+    };
+    saveHmd(JSON.stringify(data), 'post', true).then(res => {
+      showToast('录入信息成功');
+    }).catch(err => {
+      console.log(err);
+    })
   },
   // 选择图片
-  chooseImage(e) {
-    console.log(e.currentTarget.id);
+  chooseImage(e) {;
     let _this = this;
     wx.chooseImage({
       count: 1,
@@ -65,13 +86,10 @@ Page({
         opt[e.currentTarget.id] = res.tempFilePaths[0]
         _this.setData(opt);
         // 执行上传
-        res.tempFilePaths.forEach(element => {
-          // getFilePromise(element, 'voucher').then(res => {
-
-          // })
-          //   .catch(err => {
-          //   });
-        });
+        uploadFile({ filePath: res.tempFilePaths[0] }).then(data => {
+          let path = JSON.parse(data.data).data.path;
+          _this.data[e.currentTarget.id] = config.baseURL + path;
+        })
       }
     });
   },
@@ -82,7 +100,17 @@ Page({
     this.setData(opt);
   },
   //事件处理函数
-  onLoad: function () {
-    
+  onUnload: function () {
+    this.setData({
+      user_name: '',
+      user_phone: '',
+      r_name: '',
+      r_phone: '',
+      r_id_card: '',
+      r_xw: '',
+      pic1: '',
+      pic2: '',
+      radio: '1'
+    });
   },
 })
