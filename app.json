@@ -1,12 +1,14 @@
 {
   "pages": [
-    "pages/query/index",
+    "pages/query1/index",
     "pages/index/index",
+    "pages/query/index",
+    
     "pages/detail2/index",
     
     
     "pages/detail/index",
-    "pages/query1/index",
+    
     
     "pages/add/index",
     

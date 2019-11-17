@@ -1,6 +1,8 @@
 
-import { getLocation } from '../../utils/index.js';
-
+import config from '../../config/index.js';
+import { getLocation, request } from '../../utils/index.js';
+import { findOrganizationDetail, findOrganizationCase } from '../../utils/api.js';
+const { TX_MAP_KEY, baseURL } = config;
 
 Page({
 
@@ -10,6 +12,8 @@ Page({
   data: {
     longitude: '',
     latitude: '',
+    caseList: [],
+    orgInfo: {},
   },
 
   /**
@@ -17,14 +21,31 @@ Page({
    */
   onLoad: function (options) {
     getLocation().then(res => {
-      console.log(res);
       this.setData({
         longitude: res.longitude,
         latitude: res.latitude
       });
     })
-  },
 
+    // request('https://apis.map.qq.com/ws/geocoder/v1/', {
+    //   location: [res.latitude, res.longitude].join(','),
+    //   key: TX_MAP_KEY
+    // });
+
+    this.fetachData(options.id);
+  },
+  fetachData(id) {
+    Promise.all([findOrganizationDetail({ id }, 'post', true), findOrganizationCase({ organizationId: id }, 'post', false)]).then(res => {
+      console.log(res);
+      if(res.length == 2) {
+        res[0].data.data.imgUrl = baseURL + res[0].data.data.imgUrl
+        this.setData({
+          orgInfo: res[0].data.data,
+          caseList: res[1].data.data,
+        });
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

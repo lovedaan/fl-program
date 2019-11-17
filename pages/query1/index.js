@@ -1,6 +1,7 @@
 import config from '../../config/index.js';
 import { getLocation, request } from '../../utils/index.js';
-const { TX_MAP_KEY } = config;
+import { findOrganizationList }from '../../utils/api.js';
+const { TX_MAP_KEY, baseURL } = config;
 
 let list = [];
 Page({
@@ -9,7 +10,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    region: ['广东省', '广州市'],
+    list: [],
+    isNoData: false,
     address: '',
     value: '',
     multiIndex: [0, 0],
@@ -20,11 +22,38 @@ Page({
     latitude: '',
     longitude: '',
   },
-  bindMultiPickerChange: function (e) {
+  getOrganizationList(area) {
     this.setData({
+      isNoData: false,
+      list: []
+    });
+    findOrganizationList({
+      area,
+      page: 0,
+      size: 20
+    }, 'post', true).then(res => {
+      if (res.data && res.data.data.content.length) {
+        this.setData({
+          list: res.data.data.content.map(v => {
+            v.imgUrl = baseURL + v.imgUrl;
+            return v;
+          })
+        });
+      }else {
+        this.setData({
+          isNoData: true
+        });
+      }
+    })
+  },
+  bindMultiPickerChange: function (e) {
+    let address = [this.data.multiArray[0][this.data.multiIndex[0]], this.data.multiArray[1][this.data.multiIndex[1]]];
+    this.setData({
+      address: address.join(' '),
       "multiIndex[0]": e.detail.value[0],
       "multiIndex[1]": e.detail.value[1]
     })
+    this.getOrganizationList(address.join(''));
   },
   bindMultiPickerColumnChange: function (e) {
     switch (e.detail.column) {
@@ -35,6 +64,9 @@ Page({
             list.push(this.data.objectMultiArray[i].regname)
           }
         }
+        list = list.map(v => {
+          return v + '市';
+        });
         this.setData({
           "multiArray[1]": list,
           "multiIndex[0]": e.detail.value,
@@ -42,46 +74,19 @@ Page({
         })
     }
   },
-  bindChange: function (e) {
-    const val = e.detail.value
-    this.setData({
-      year: this.data.years[val[0]],
-      month: this.data.months[val[1]]
-    })
-  },
-  bindRegionChange: function (e) {
-    this.setData({
-      address: e.detail.value.splice(0,2)
-    })
-    this.getAddress(e.detail.value.toString());
-  },
-  getAddress: function (address) {
-    request('https://apis.map.qq.com/ws/geocoder/v1/', {
-      address,
-      key: TX_MAP_KEY
-    }).then(res => {
-      this.setData({
-        latitude: res.result.location.lat,
-        longitude: res.result.location.lng,
-      });
-    });
-  },
   getLocation: function() {
     getLocation().then(res => {
-      this.setData({
-        latitude: res.latitude,
-        longitude: res.longitude,
-      });
       return request('https://apis.map.qq.com/ws/geocoder/v1/', {
         location: [res.latitude, res.longitude].join(','),
         key: TX_MAP_KEY
       });
     }).then(res => {
       const { ad_info } = res.result;
+      const address = [ad_info.province, ad_info.city].join(' ');
       this.setData({
-        region: [ad_info.province, ad_info.city, ad_info.district],
-        address: [ad_info.province, ad_info.city].join(' ')
+        address
       });
+      this.getOrganizationList([ad_info.province, ad_info.city].join(''));
     })
   },
   /**

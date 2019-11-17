@@ -1,36 +1,28 @@
 <view class="detail-page">
-  <view class="detail-top">
-    <view class="top-pic"><image  mode="aspectFill" src="https://images.jxsg.com/seckill_hot_img/2019/11/1a17c504ff139b7c81c5b077d46fe1cb.jpg"></image></view>
+  <view class="detail-top" wx:if="{{orgInfo.id}}">
+    <view class="top-pic"><image  mode="aspectFill" src="{{orgInfo.imgUrl}}"></image></view>
     <view class="box1">
-      <view class="t-title">很好机构</view>
-      <view class="t-line">地区：广东省广州市天河区</view>
-      <view class="t-line red">联系电话：15911555555</view>
+      <view class="t-title">{{orgInfo.shopName}}</view>
+      <view class="t-line">地区：{{orgInfo.area}}</view>
+      <view class="t-line red">联系电话：{{orgInfo.mobile}}</view>
     </view>
     <view class="px-shupm">
       <view class="px-title">介绍</view>
-      <view class="px-text">京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了京东卡进来摔倒了</view>
+      <view class="px-text">{{orgInfo.content}}</view>
     </view>
-    <view class="px-ketang">
+    <view class="px-ketang" wx:if="{{caseList.length > 0}}">
       <view class="px-title">培训课程</view>
       <view class="px-wrap">
-        <view class="px-item">
-          <view class="p-title">如何做一个好护工</view>
-          <view class="p-con">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</view>
-        </view>
-        <view class="px-item">
-          <view class="p-title">课程2</view>
-          <view class="p-con">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</view>
-        </view>
-        <view class="px-item">
-          <view class="p-title">课程3</view>
-          <view class="p-con">内容内容内容内容内容内容内容</view>
+        <view class="px-item" wx:for="{{caseList}}" wx:key="index">
+          <view class="p-title">{{item.title}}</view>
+          <view class="p-con">{{item.content}}</view>
         </view>
       </view>
     </view>
     
   </view>
   <view class="detail-com">
-    <view class="c-title">地址：广州天河</view>
+    <view class="c-title">地址：{{orgInfo.address}}</view>
     <view class="map">
       <map longitude="{{longitude}}" latitude="{{latitude}}" />
     </view>

@@ -3,7 +3,6 @@
   <view class="address-top">
     <view class="address-top-com">
       <view class="address-label"> <image class="addres-icon" src="/assets/addres-icon.png"></image>{{address || '定位失败'}}</view>
-      
       <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
         <view class="address-picker">
           <text>选择其他地区</text><image class="arrow2" src="/assets/arrow2.png"></image>
@@ -12,38 +11,24 @@
     </view>
   </view>
 
-  <view class="address-list">
-    <view class="address-item">
-      <!-- <view class="map">
-        <map latitude="{{latitude}}" longitude="{{longitude}}"></map>
-      </view> -->
+  <view class="address-list" wx:if="{{list.length > 0}}">
+    <view class="address-item" wx:for="{{list}}" wx:key="index">
       <view class="train-list">
-        <navigator hover-class="none" url="/pages/detail/index" class="train-item">
+        <navigator hover-class="none" url="{{'/pages/detail/index?id=' + item.id + '&address=' + item.address}}" class="train-item">
           <view class="left-pic">
-            <image mode="aspectFill" class="pic" src="https://images.jxsg.com/seckill_hot_img/2019/11/1a17c504ff139b7c81c5b077d46fe1cb.jpg" />
+            <image mode="aspectFill" class="pic" src="{{item.imgUrl}}" />
             <!-- <text>暂无图片</text> -->
           </view>
           <view class="right-info">
-            <view class="i-line">建档立卡是机构</view>
-            <view class="i-line">广州大道南路口</view>
-            <view class="i-line">136454554</view>
-          </view>
-        </navigator>
-        <navigator hover-class="none" url="/pages/detail/index" class="train-item">
-          <view class="left-pic">
-            <image mode="aspectFill" class="pic" src="https://images.jxsg.com/seckill_hot_img/2019/11/1a17c504ff139b7c81c5b077d46fe1cb.jpg" />
-            <!-- <text>暂无图片</text> -->
-          </view>
-          <view class="right-info">
-            <view class="i-line">建档立卡是机构</view>
-            <view class="i-line">广州大道南路口</view>
-            <view class="i-line">136454554</view>
+            <view class="i-line">{{item.shopName}}</view>
+            <view class="i-line">{{item.address}}</view>
+            <view class="i-line">{{item.mobile}}</view>
           </view>
         </navigator>
       </view>
     </view>
   </view>
-  <view class='no-page'>
+  <view class='no-page' wx:if="{{isNoData}}">
     <image src='/assets/ndata.png'></image>
     <view class='text'>没有相关信息！</view>
   </view>
