@@ -16,6 +16,7 @@ Page({
     this.setData({
       isNodata: false
     });
+    let _this = this;
     let searchValue = this.data.value;
     if (!searchValue) {
       showToast('请输入姓名、机构名、电话、身份证查询');
@@ -27,16 +28,12 @@ Page({
           reasonList: res.data.data.reasonList,
           rankInfo: res.data.data.rank,
         };
-        this.setData({
-          reasonList: res.data.data.reasonList,
-          rankInfo: res.data.data.rank,
-          value: ''
-        });
         payParam({
           openId: app.globalData.openId,
           queryParam: searchValue
         }, 'post', true).then(result => {
           console.log(result);
+          this.weixinPay(result.data, res.data.data);
         })
       }else {
         this.setData({
@@ -44,6 +41,24 @@ Page({
           value: ''
         });
       }
+    })
+  },
+  // 微信支付
+  weixinPay(params, data) {
+    wx.requestPayment({
+      timeStamp: params.timeStamp,
+      nonceStr: params.nonce_str,
+      package: params.return_code,
+      signType: 'MD5',
+      paySign: params.sign,
+      success(ret) {
+        _this.setData({
+          reasonList: data.reasonList,
+          rankInfo: data.rank,
+          value: ''
+        });
+      },
+      fail(res) { }
     })
   },
   onChange(e) {
@@ -81,7 +96,12 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    this.setData({
+      value: '',
+      isNodata: false,
+      rankInfo: {},
+      reasonList: []
+    });
   },
 
   /**

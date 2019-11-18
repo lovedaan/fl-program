@@ -8,13 +8,14 @@ App({
     wx.login({
       success(res) {
         getWxOpenId({JSCODE: res.code}, 'post').then(data => {
-          _this.globalData.openId = data.data;
+          console.log(data, '-------');
+          //_this.globalData.openId = data.data;
         })
       }
     })
   }, 
   globalData: {
-    openId: '',
+    openId: 'osWGis4soBFtzsEkSWUgcNIQVmOc',
     queryData: {},
     userInfo: null
   }
