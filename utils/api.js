@@ -39,3 +39,8 @@ export const uploadFile = (data = {}) => {
 export const findHhbList = (data = {}, method = 'get', isLoading = false) => {
   return request(`${baseApiURL}/findList `, data, method, isLoading)
 }
+
+// 支付
+export const payParam = (data = {}, method = 'get', isLoading = false) => {
+  return request(`${baseURL}min/getPrepayParam `, data, method, isLoading)
+}

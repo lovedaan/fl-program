@@ -86,7 +86,7 @@
         <view class="xw-box">
           <view class="label required">具体行为</view>
           <view class="textarea">
-            <textarea bind:blur="onChange" value="{{r_xw}}" id="r_xw" class="xw-textarea"></textarea>
+            <textarea bindblur="onChange" value="{{r_xw}}" id="r_xw" class="xw-textarea"></textarea>
           </view>
         </view>
       </van-cell-group>

@@ -1,4 +1,4 @@
-import { findHhbList } from '../../utils/api.js';
+import { findHhbList, payParam } from '../../utils/api.js';
 import { showToast } from '../../utils/index.js';
 const app = getApp();
 Page({
@@ -16,11 +16,12 @@ Page({
     this.setData({
       isNodata: false
     });
-    if(!this.data.value) {
+    let searchValue = this.data.value;
+    if (!searchValue) {
       showToast('请输入姓名、机构名、电话、身份证查询');
       return;
     }
-    findHhbList({ code: this.data.value}, 'post', true).then(res => {
+    findHhbList({ code: searchValue}, 'post', true).then(res => {
       if (res.data.retCode == '0') {
         app.globalData.queryData = {
           reasonList: res.data.data.reasonList,
@@ -31,6 +32,12 @@ Page({
           rankInfo: res.data.data.rank,
           value: ''
         });
+        payParam({
+          openId: app.globalData.openId,
+          queryParam: searchValue
+        }, 'post', true).then(result => {
+          console.log(result);
+        })
       }else {
         this.setData({
           isNodata: true,

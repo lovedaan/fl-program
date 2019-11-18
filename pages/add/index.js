@@ -70,6 +70,7 @@ Page({
     };
     saveHmd(JSON.stringify(data), 'post', true).then(res => {
       showToast('录入信息成功');
+      this.resetData();
     }).catch(err => {
       console.log(err);
     })
@@ -99,8 +100,7 @@ Page({
     opt[e.currentTarget.id] = '';
     this.setData(opt);
   },
-  //事件处理函数
-  onUnload: function () {
+  resetData() {
     this.setData({
       user_name: '',
       user_phone: '',
@@ -112,5 +112,9 @@ Page({
       pic2: '',
       radio: '1'
     });
+  },
+  //事件处理函数
+  onUnload: function () {
+    this.resetData();
   },
 })

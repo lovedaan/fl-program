@@ -22,10 +22,10 @@
 }
 .sreach-btn {
   width: 108rpx;
-  height: 108rpx;
+  height: 54px;
   text-align: center;
-  line-height: 108rpx;
-  border: 1px solid #ccc;
+  line-height: 54px;
+  border: 1rpx solid #ccc;
   background: #fff;
   box-sizing: border-box;
 }

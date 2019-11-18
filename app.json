@@ -3,13 +3,7 @@
     "pages/index/index",
     "pages/query/index",
     "pages/add/index",
-    
-    
-    
-    
-    
     "pages/particulars/index"
-    
   ],
   "window": {
     "backgroundTextStyle": "light",

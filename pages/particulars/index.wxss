@@ -126,7 +126,7 @@
 }
 .xw-item {
   padding: 15rpx 0;
-  border-bottom: 1rpx solid #ccc;
+  border-bottom: 1rpx solid #eee;
 }
 .xw-item:last-child {
   border-bottom: none;
