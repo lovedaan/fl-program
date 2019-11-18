@@ -2,7 +2,7 @@
 import config from '../../config/index.js';
 import { getLocation, request } from '../../utils/index.js';
 import { findOrganizationDetail, findOrganizationCase } from '../../utils/api.js';
-const { TX_MAP_KEY, baseURL } = config;
+const { TX_MAP_KEY, baseURL, txMapURL } = config;
 
 Page({
 
@@ -20,19 +20,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    getLocation().then(res => {
-      this.setData({
-        longitude: res.longitude,
-        latitude: res.latitude
-      });
-    })
-
-    // request('https://apis.map.qq.com/ws/geocoder/v1/', {
-    //   location: [res.latitude, res.longitude].join(','),
-    //   key: TX_MAP_KEY
-    // });
-
+    // 解析地址成经纬度
+    this.getLocation(options.address);
+    // 请求详情数据
     this.fetachData(options.id);
+  },
+  getLocation(address) {
+    request(`${txMapURL}ws/geocoder/v1/`, {
+      address,
+      key: TX_MAP_KEY
+    }).then(res => {
+      console.log(res);
+      this.setData({
+        longitude: res.result.location.lng,
+        latitude: res.result.location.lat
+      });
+    });
   },
   fetachData(id) {
     Promise.all([findOrganizationDetail({ id }, 'post', true), findOrganizationCase({ organizationId: id }, 'post', false)]).then(res => {

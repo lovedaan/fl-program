@@ -1,5 +1,7 @@
 import { findWaiterList } from '../../utils/api.js';
 import { showToast } from '../../utils/index.js';
+import config from '../../config/index.js';
+const { baseURL } = config;
 Page({
 
   /**
@@ -21,10 +23,15 @@ Page({
     findWaiterList({ code: this.data.value}, 'post', true).then(res => {
       if(res.data.data && res.data.data.length) {
         this.setData({
-          resultList: res.data.data
+          value: '',
+          resultList: res.data.data.map(v => {
+            v.headImg = baseURL + v.headImg;
+            return v;
+          })
         });
       }else {
         this.setData({
+          value: '',
           isNodata: true
         });
       }

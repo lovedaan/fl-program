@@ -11,16 +11,16 @@
       <view class="sreach-btn" bind:tap="onSearch">搜索</view>
     </view>
   </view>
-  <view class="search-result">
-    <view wx:if="{{resultList.length > 0}}">
-      <navigator hover-class="none" url="/pages/detail2/index" class="item">
+  <view class="search-result" wx:if="{{resultList.length > 0}}">
+    <view wx:for="{{resultList}}" wx:key="index">
+      <navigator hover-class="none" url="{{'/pages/detail2/index?id=' + item.id}}" class="item">
         <view class="user-info">
-          <view class="user-name">李四</view>
-          <view class="user-phone">15915941956</view>
-          <view class="user-carid">45668***218293</view>
+          <view class="user-name">{{item.name}}</view>
+          <view class="user-phone">{{item.mobile}}</view>
+          <view class="user-carid">{{item.idCard}}</view>
         </view>
         <view class="pic">
-          <image src="http://images.jxsg.com/thumb/goods_gallery/wap/2018/09/d1dc1c0916c187f2c2da19a96a165812.jpg" mode="aspectFill"></image>
+          <image src="{{item.headImg}}" mode="aspectFill"></image>
         </view>
       </navigator>
     </view>

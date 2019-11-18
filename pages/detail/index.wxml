@@ -15,7 +15,7 @@
       <view class="px-wrap">
         <view class="px-item" wx:for="{{caseList}}" wx:key="index">
           <view class="p-title">{{item.title}}</view>
-          <view class="p-con">{{item.content}}</view>
+          <view class="p-con"><rich-text nodes="{{item.content}}"></rich-text></view>
         </view>
       </view>
     </view>

@@ -1,35 +1,27 @@
 <view class="detail2-page">
   <view class="detail2-top d-flex">
-    <image class="touxiang" src="http://images.jxsg.com/thumb/goods_gallery/wap/2018/09/d1dc1c0916c187f2c2da19a96a165812.jpg" mode="aspectFill"></image>
+    <image class="touxiang" src="{{waiterInfo.headImg}}" mode="aspectFill"></image>
     <view class="user-bd">
-      <text class="user-name">刘德华</text>
-      <text>15915941956</text>
+      <text class="user-name">{{waiterInfo.name}}</text>
+      <text>{{waiterInfo.mobile}}</text>
     </view>
   </view>
   <view class="jiben">
     <view class="jb-title">基本信息</view>
     <view class="jb-com">
-      <view>身份证：28392904**90243</view>
-      <view>地址：广州市天河区</view>
+      <view>身份证：{{waiterInfo.idCard}}</view>
+      <view>性别：{{waiterInfo.sex}}</view>
     </view>
   </view>
-  <view class="zj-type">
+  <view class="zj-type" wx:if="{{certList.length > 0}}">
     <view class="zj-title">证件类型</view>
     <view class="zj-box">
-      <view class="zj-item d-flex">
-        <view class="zj-pic"><image src="http://images.jxsg.com/thumb/goods_gallery/wap/2018/09/d1dc1c0916c187f2c2da19a96a165812.jpg" mode="aspectFill"></image></view>
+      <view class="zj-item d-flex" wx:for="{{certList}}" wx:key="index">
+        <view class="zj-pic"><image src="{{item.certImageUrl}}" mode="aspectFill"></image></view>
         <view class="zj-info">
-          <view class="zj-name">护工证</view>
-          <view>认证编码：A9492834</view>
-          <view>有效期：2019:11:15-2019:11:17</view>
-        </view>
-      </view>
-      <view class="zj-item d-flex">
-        <view class="zj-pic"><image src="http://images.jxsg.com/thumb/goods_gallery/wap/2018/09/d1dc1c0916c187f2c2da19a96a165812.jpg" mode="aspectFill"></image></view>
-        <view class="zj-info">
-          <view class="zj-name">护工证</view>
-          <view>认证编码：A9492834</view>
-          <view>有效期：2019:11:15-2019:11:17</view>
+          <view class="zj-name">{{item.certName}}</view>
+          <view>认证编码：{{item.certNo}}</view>
+          <view>有效期：{{item.dateStart + '-' + item.dateEnd}}</view>
         </view>
       </view>
     </view>

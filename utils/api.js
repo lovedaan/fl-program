@@ -22,3 +22,13 @@ export const findOrganizationCase = (data = {}, method = 'get', isLoading = fals
 export const findWaiterList = (data = {}, method = 'get', isLoading = false) => {
   return request(`${baseApiURL}/findWaiterList`, data, method, isLoading)
 }
+
+// 服务人员详情
+export const findWaiterDetail = (data = {}, method = 'get', isLoading = false) => {
+  return request(`${baseApiURL}/findWaiterById`, data, method, isLoading)
+}
+
+// 服务人员详情对应的证件列表
+export const findWaiterCertList = (data = {}, method = 'get', isLoading = false) => {
+  return request(`${baseApiURL}/findWaiterCertList`, data, method, isLoading)
+}

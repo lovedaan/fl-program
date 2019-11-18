@@ -1,7 +1,7 @@
 import config from '../../config/index.js';
 import { getLocation, request } from '../../utils/index.js';
 import { findOrganizationList }from '../../utils/api.js';
-const { TX_MAP_KEY, baseURL } = config;
+const { TX_MAP_KEY, baseURL, txMapURL } = config;
 
 let list = [];
 Page({
@@ -76,7 +76,7 @@ Page({
   },
   getLocation: function() {
     getLocation().then(res => {
-      return request('https://apis.map.qq.com/ws/geocoder/v1/', {
+      return request(`${txMapURL}ws/geocoder/v1/`, {
         location: [res.latitude, res.longitude].join(','),
         key: TX_MAP_KEY
       });
