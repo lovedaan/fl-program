@@ -12,7 +12,13 @@ Page({
     isNodata: false,
     resultList: [],
   },
-  onSearch(e) {
+  // 输入法点击回车确定触发
+  searchConfirm(e) {
+    this.data.value = e.detail;
+    this.onSearch();
+  },
+  // 点击搜索按钮触发
+  onSearch() {
     this.setData({
       isNodata: false
     });
@@ -36,65 +42,20 @@ Page({
         });
       }
     }).catch(err => {
-      console.log(err);
+      showToast('查询失败，请重新试一下~')
     });
   },
   handelInput(e) {
     this.data.value = e.detail;
   },
   /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+    this.setData({
+      value: '',
+      isNodata: false,
+      resultList: []
+    });
   }
 })

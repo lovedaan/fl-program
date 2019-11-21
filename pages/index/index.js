@@ -67,6 +67,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: '携家认证精准查询',
+      path: '/page/index/index',
+      imageUrl: '/assets/img/1.jpg'
+    }
   }
 })

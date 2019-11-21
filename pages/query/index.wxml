@@ -6,6 +6,7 @@
         placeholder="认证编码、手机号、身份证号"
         use-action-slot
         bind:change="handelInput"
+        bind:search="searchConfirm"
       >
       </van-search>
       <view class="sreach-btn" bind:tap="onSearch">搜索</view>
