@@ -6,19 +6,16 @@
         <van-field
           value="{{ rankInfo.name }}"
           label="姓名或机构名"
-          id="r_radio"
           disabled
         />
         <van-field
           value="{{ rankInfo.mobile }}"
           label="电话"
-          id="r_phone"
           disabled
         />
         <van-field
           value="{{ rankInfo.idCard }}"
           label="身份证号"
-          id="r_id_card"
           disabled
         />
         

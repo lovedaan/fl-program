@@ -32,8 +32,9 @@ Page({
           openId: app.globalData.openId,
           queryParam: searchValue
         }, 'post', true).then(result => {
-          console.log(result);
           this.weixinPay(result.data, res.data.data);
+        }).catch(err => {
+          showToast('请求失败，请重新试一下！');
         })
       }else {
         this.setData({
@@ -48,7 +49,7 @@ Page({
     wx.requestPayment({
       timeStamp: params.timeStamp,
       nonceStr: params.nonce_str,
-      package: params.return_code,
+      package: `prepay_id=${params.prepay_id}`,
       signType: 'MD5',
       paySign: params.sign,
       success(ret) {

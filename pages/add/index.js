@@ -72,7 +72,7 @@ Page({
       showToast('录入信息成功');
       this.resetData();
     }).catch(err => {
-      console.log(err);
+      showToast('录入信息失败，请重新试一下！');
     })
   },
   // 选择图片
@@ -90,6 +90,8 @@ Page({
         uploadFile({ filePath: res.tempFilePaths[0] }).then(data => {
           let path = JSON.parse(data.data).data.path;
           _this.data[e.currentTarget.id] = config.baseURL + path;
+        }).catch(err => {
+          showToast('上传图片失败，请重新试一下！');
         })
       }
     });
