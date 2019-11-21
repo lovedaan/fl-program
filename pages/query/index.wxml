@@ -6,6 +6,7 @@
         placeholder="姓名、机构名、电话、身份证"
         use-action-slot
         bind:change="onChange"
+        bind:search="searchConfirm"
       >
       </van-search>
       <view class="sreach-btn" bind:tap="onSearch">搜索</view>
