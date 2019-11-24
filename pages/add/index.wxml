@@ -1,17 +1,12 @@
 <!--index.wxml-->
-<view class="container">
-  <!-- <view class="group-title-box">
-    <view class="group-title-txt"><icon type="search" size="40" color="#fff" /><text>完善资料</text></view>
-  </view> -->
+<view class="container add-page">
   <van-notice-bar
     left-icon="bullhorn-o"
     text="必须填真实信息，凡虚报、假报信息的均会拉黑"
   />
   <view class="form-container">
+    <view class="group-title">录入者信息</view>
     <view class="form-group">
-      <view class="group-icon">
-        <view class="group-title">录入者信息</view>
-      </view>
       <van-cell-group>
         <van-field
           value="{{ user_name }}"
@@ -26,15 +21,16 @@
           label="电话"
           placeholder="请输入电话"
           id="user_phone"
+          type="{{'number'}}"
+          maxlength="{{phoneMaxNum}}"
           required
           bind:blur="onChange"
         />
       </van-cell-group>
     </view>
+    <view class='add-line'></view>
+    <view class="group-title">上榜人员\机构信息</view>
     <view class="form-group">
-      <view class="group-icon">
-        <view class="group-title">上榜人员\机构信息</view>
-      </view>
       <view class="ly-type d-flex flex-center">
         <view class="required ly-text">上榜类型</view>
         <van-radio-group class="radio-group d-flex flex-center" value="{{ radio }}" bind:change="onChangeRadio">
@@ -56,6 +52,8 @@
           label="电话"
           id="r_phone"
           placeholder="请输入电话"
+          type="{{'number'}}"
+          maxlength="{{phoneMaxNum}}"
           bind:blur="onChange"
         />
         <van-field
@@ -86,7 +84,7 @@
         <view class="xw-box">
           <view class="label required">具体行为</view>
           <view class="textarea">
-            <textarea bindblur="onChange" value="{{r_xw}}" id="r_xw" class="xw-textarea"></textarea>
+            <textarea bindinput="onChange" value="{{r_xw}}" id="r_xw" class="xw-textarea" placeholder='请输入具体行为'></textarea>
           </view>
         </view>
       </van-cell-group>

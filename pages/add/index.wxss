@@ -10,8 +10,8 @@
   height: 300rpx;
   background: linear-gradient(to right,rgb(254, 214, 70),rgb(255, 229, 136));
 }
-.form-container{
-  padding: 0 20rpx 40rpx;
+.add-page .form-container{
+  padding-bottom: 40rpx;
 }
 .group-title-txt{
   display: flex;
@@ -35,10 +35,12 @@
   height: 70rpx;
 }
 .group-title {
-  line-height: 70rpx;
-  font-size: 36rpx;
+  line-height: 90rpx;
+  font-size: 38rpx;
   color: #000;
   font-weight: bold;
+  padding: 0 30rpx;
+  border-bottom: 1rpx solid #eee;
 }
 .pic-box1 {
   display: flex;
@@ -51,8 +53,8 @@
 .pic-label {
   position: relative;
   margin-bottom: 10px;
-  font-size: 14px;
-  width: 90px;
+  font-size: 34rpx;
+  width: 260rpx;
 }
 .required::before {
   position: absolute;
@@ -66,7 +68,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #444;
+  border: 1rpx solid rgba(158, 154, 154, 0.6);
   border-radius: 10rpx;
   height: 200rpx;
   width: 100%;
@@ -100,7 +102,7 @@
 }
 
 .form-footer {
-  padding: 45rpx 15rpx;
+  padding: 45rpx 30rpx;
 }
 .ly-type {
   background: #fff;
@@ -109,8 +111,8 @@
 }
 .ly-text {
   position: relative;
-  font-size: 26rpx;
-  width: 160rpx;
+  font-size: 34rpx;
+  width: 260rpx;
   white-space: nowrap;
 }
 .van-radio {
@@ -121,15 +123,35 @@
 }
 .xw-box .label {
   position: relative;
-  font-size: 14px;
+  font-size: 34rpx;
   width: 90px;
 }
 .textarea {
   flex: 1;
 }
 .xw-textarea {
+  width: 100%;
   margin: 20rpx 0;
   padding: 20rpx;
   height: 200px;
-  border: 1px solid #eee;
+  border: 1rpx solid #eee;
+  background: #eee;
+  box-sizing: border-box;
+}
+
+.add-page .van-cell__title {
+  width: 260rpx !important;
+  min-width: 260rpx !important;
+  max-width: 260rpx !important;
+  font-size: 34rpx !important;
+}
+.add-page .van-field__placeholder, .add-page .van-notice-bar__content {
+  font-size: 30rpx !important;
+}
+.add-page .van-field__input, .add-page .van-radio__label  {
+  font-size: 34rpx !important;
+}
+.add-line {
+  height: 20rpx;
+  background: #f2f2f2;
 }

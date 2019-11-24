@@ -26,8 +26,8 @@
   height: 100rpx;
   background: linear-gradient(to left,rgb(85, 171, 245),rgb(82, 130, 238));
 }
-.form-container{
-  padding: 0 25rpx 40rpx;
+.detail-page .form-container{
+  padding: 0 10rpx 40rpx;
 }
 .group-title-txt{
   display: flex;
@@ -78,11 +78,11 @@
 .detail-page .pic-label {
   position: relative;
   margin-bottom: 10px;
-  font-size: 14px;
-  width: 90px;
-  max-width:90px;
-  min-width:90px;
-  color: #333;
+  font-size: 34rpx;
+  width: 260rpx;
+  max-width:260rpx;
+  min-width:260rpx;
+  color: #555;
 }
 .detail-page .pic-box1 .pic {
   width: 200rpx;
@@ -105,9 +105,6 @@
 }
 .van-radio {
   margin-right: 30rpx;
-}
-.xw-box {
-  padding: 10px 0 10px 15px;
 }
 .xw-box .label {
   position: relative;
@@ -137,18 +134,53 @@
   justify-content: space-between;
   height: 50rpx;
   line-height: 50rpx;
-  font-size: 14px;
+  font-size: 32rpx;
   margin-bottom: 15rpx;
   color: #323233;
 }
 .item-text {
-  font-size: 14px;
+  font-size: 30rpx;
   line-height: 18px;
   color:#969799;
   margin-bottom: 15rpx;
 }
 .item-time {
   text-align: right;
-  font-size: 15px;
+  font-size: 32rpx;
   color: #323233;
+}
+.detail-page .van-field__input--disabled {
+  font-size: 34rpx !important;
+  color: #000 !important;
+}
+.detail-page .van-cell__title {
+  width: 260rpx !important;
+  min-width: 260rpx !important;
+  max-width: 260rpx !important;
+  font-size: 34rpx !important;
+  color: #555 !important;
+}
+
+.detail-title {
+  height: 90rpx;
+  line-height: 90rpx;
+  padding: 0 30rpx;
+  font-size: 38rpx;
+  color: #000;
+  font-weight: bold;
+  border-bottom: 1rpx solid #eee;
+}
+.xw-box .detail-title {
+  padding: 0 40rpx;
+}
+.detail-line {
+  height: 20rpx;
+  background: #f2f2f2;
+}
+.xw-list {
+  padding: 0 40rpx 30rpx;
+}
+.detail-page .box2 {
+  border-bottom: 0;
+  padding-bottom: 0;
 }

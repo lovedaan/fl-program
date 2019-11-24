@@ -1,9 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/query/index",
     "pages/add/index",
-    "pages/particulars/index"
+    "pages/particulars/index",
+    "pages/query/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

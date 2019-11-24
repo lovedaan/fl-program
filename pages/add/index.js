@@ -5,6 +5,7 @@ const app = getApp()
 
 Page({
   data: {
+    phoneMaxNum: 11,
     user_name: '',
     user_phone: '',
   

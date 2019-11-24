@@ -1,5 +1,6 @@
 import { findHhbList, payParam } from '../../utils/api.js';
 import { showToast } from '../../utils/index.js';
+import config from '../../config/index.js';
 const app = getApp();
 Page({
 
@@ -30,15 +31,26 @@ Page({
     }
     findHhbList({ code: searchValue}, 'post', true).then(res => {
       if (res.data.retCode == '0') {
+        let data = res.data.data;
+        if(!data.rank.headImg) {
+          data.rank.headImg = '/assets/no-pic.jpg';
+        }
+        
         app.globalData.queryData = {
-          reasonList: res.data.data.reasonList,
-          rankInfo: res.data.data.rank,
+          reasonList: data.reasonList,
+          rankInfo: data.rank,
         };
+        _this.setData({
+          reasonList: data.reasonList,
+          rankInfo: data.rank,
+          value: ''
+        });
+        return;
         payParam({
           openId: app.globalData.openId,
           queryParam: searchValue
         }, 'post', true).then(result => {
-          this.weixinPay(result.data, res.data.data);
+          this.weixinPay(result.data, data);
         }).catch(err => {
           showToast('请求失败，请重新试一下！');
         })
@@ -52,6 +64,7 @@ Page({
   },
   // 微信支付
   weixinPay(params, data) {
+    let _this = this;
     wx.requestPayment({
       timeStamp: params.timeStamp,
       nonceStr: params.nonce_str,
