@@ -21,7 +21,9 @@ Page({
   // 点击搜索按钮的时候触发
   onSearch() {
     this.setData({
-      isNodata: false
+      isNodata: false,
+      rankInfo: {},
+      reasonList: []
     });
     let _this = this;
     let searchValue = this.data.value;
