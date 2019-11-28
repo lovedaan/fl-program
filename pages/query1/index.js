@@ -35,7 +35,11 @@ Page({
       if (res.data && res.data.data.content.length) {
         this.setData({
           list: res.data.data.content.map(v => {
-            v.imgUrl = baseURL + v.imgUrl;
+            if (v.imgUrl) {
+              v.imgUrl = baseURL + v.imgUrl;
+            }else {
+              v.imgUrl = '/assets/no-pic.jpg';
+            }
             return v;
           })
         });

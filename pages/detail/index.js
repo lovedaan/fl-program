@@ -21,7 +21,7 @@ Page({
    */
   onLoad: function (options) {
     // 解析地址成经纬度
-    this.getLocation(options.address);
+    // this.getLocation(options.address);
     // 请求详情数据
     this.fetachData(options.id);
   },
@@ -30,7 +30,6 @@ Page({
       address,
       key: TX_MAP_KEY
     }).then(res => {
-      console.log(res);
       this.setData({
         longitude: res.result.location.lng,
         latitude: res.result.location.lat
@@ -39,10 +38,11 @@ Page({
   },
   fetachData(id) {
     Promise.all([findOrganizationDetail({ id }, 'post', true), findOrganizationCase({ organizationId: id }, 'post', false)]).then(res => {
-      console.log(res);
       if(res.length == 2) {
-        res[0].data.data.imgUrl = baseURL + res[0].data.data.imgUrl
+        res[0].data.data.imgUrl = baseURL + res[0].data.data.imgUrl;
         this.setData({
+          longitude: res[0].data.data.longitude,
+          latitude: res[0].data.data.latitude,
           orgInfo: res[0].data.data,
           caseList: res[1].data.data,
         });

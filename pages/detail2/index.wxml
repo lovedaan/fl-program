@@ -1,6 +1,6 @@
 <view class="detail2-page">
   <view class="detail2-top d-flex">
-    <image class="touxiang" src="{{waiterInfo.headImg}}" mode="aspectFill"></image>
+    <image class="touxiang" id="{{waiterInfo.headImg}}" bindtap="previewImg" src="{{waiterInfo.headImg}}" mode="aspectFill"></image>
     <view class="user-bd">
       <text class="user-name">{{waiterInfo.name}}</text>
       <text>{{waiterInfo.mobile}}</text>
@@ -17,7 +17,7 @@
     <view class="zj-title">证件类型</view>
     <view class="zj-box">
       <view class="zj-item d-flex" wx:for="{{certList}}" wx:key="index">
-        <view class="zj-pic"><image src="{{item.certImageUrl}}" mode="aspectFill"></image></view>
+        <view class="zj-pic"><image id="{{item.certImageUrl}}" bindtap="previewImg" src="{{item.certImageUrl}}" mode="aspectFill"></image></view>
         <view class="zj-info">
           <view class="zj-name">{{item.certName}}</view>
           <view>认证编码：{{item.certNo}}</view>

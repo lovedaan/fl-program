@@ -20,9 +20,10 @@ Page({
   },
   fetchData(id) {
     Promise.all([findWaiterDetail({ id }, 'post', true), findWaiterCertList({ waiterId: id }, 'post', false)]).then(res => {
-      res[0].data.data.headImg = baseURL + res[0].data.data.headImg;
-      res[0].data.data.idCardImgb = baseURL + res[0].data.data.idCardImgb;
-      res[0].data.data.idCardImgf = baseURL + res[0].data.data.idCardImgf;
+
+      res[0].data.data.headImg = res[0].data.data.headImg ? (baseURL + res[0].data.data.headImg) : '/assets/no-pic.jpg';
+      res[0].data.data.idCardImgb = res[0].data.data.idCardImgb ? (baseURL + res[0].data.data.idCardImgb) : '/assets/no-pic.jpg';
+      res[0].data.data.idCardImgf = res[0].data.data.idCardImgf ? (baseURL + res[0].data.data.idCardImgf) : '/assets/no-pic.jpg';
       if ( res[0].data.data.sex == 0 ) {
         res[0].data.data.sex = '未知'
       } else if (res[0].data.data.sex == 1) {
@@ -33,12 +34,26 @@ Page({
       this.setData({
         waiterInfo: res[0].data.data,
         certList: res[1].data.data && res[1].data.data.map(v => {
-          v.certImageUrl = baseURL + v.certImageUrl;
+
+          if (v.certImageUrl) {
+            v.certImageUrl = baseURL + v.certImageUrl;
+          } else {
+            v.certImageUrl = '/assets/no-pic.jpg';
+          }
+
           v.dateStart = formatTime(new Date(v.dateStart));
           v.dateEnd = formatTime(new Date(v.dateEnd));
           return v;
         })
       });
+    })
+  },
+  // 图片预览
+  previewImg(e) {
+    let url = e.currentTarget.id;
+    wx.previewImage({
+      current: url, // 当前显示图片的http链接
+      urls: [url] // 需要预览的图片http链接列表
     })
   },
   /**

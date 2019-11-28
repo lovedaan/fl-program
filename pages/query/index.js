@@ -20,7 +20,8 @@ Page({
   // 点击搜索按钮触发
   onSearch() {
     this.setData({
-      isNodata: false
+      isNodata: false,
+      resultList: []
     });
     if(!this.data.value) {
       showToast('请求输入认证编码、手机号、身份证号之一查询')
@@ -31,14 +32,19 @@ Page({
         this.setData({
           value: '',
           resultList: res.data.data.map(v => {
-            v.headImg = baseURL + v.headImg;
+            if (v.headImg) {
+              v.headImg = baseURL + v.headImg;
+            } else {
+              v.headImg = '/assets/no-pic.jpg';
+            }
             return v;
           })
         });
       }else {
         this.setData({
           value: '',
-          isNodata: true
+          isNodata: true,
+          resultList: []
         });
       }
     }).catch(err => {
