@@ -21,7 +21,7 @@
         <text>录入红黑榜</text>
       </navigator>
       <navigator hover-class="none" url="/pages/query/index" class="nav-item nav-item-blue">
-        <image class="weather-bg" src="../../assets/inquire.png"></image>
+        <image class="weather-bg weather-bg2" src="../../assets/inquire.png"></image>
         <text>查询红黑榜</text>
       </navigator>
     </view>

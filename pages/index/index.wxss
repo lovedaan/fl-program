@@ -69,7 +69,6 @@
 .nav-item {
   display: flex;
   align-items: center;
-  flex-direction: column;
   justify-content: center;
   width: 100%;
   height: 200rpx;
@@ -91,4 +90,12 @@
   /* margin-top: 80rpx; */
   /* background: linear-gradient(to bottom,rgb(85, 171, 245),rgb(82, 130, 238)); */
   /* box-shadow: 3px 3px 3px 0px #fff inset,-2px -3px 3px 0px rgb(148, 113, 201) inset; */
+}
+
+.nav-item .weather-bg {
+  margin-right: 30rpx;
+}
+.nav-item .weather-bg2 {
+  border: 4rpx solid rgb(18, 150, 219);
+  border-radius: 4rpx;
 }
