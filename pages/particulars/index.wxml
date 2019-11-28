@@ -24,7 +24,7 @@
           <view class='box1'>
             <view class="pic-label">机构或个人相片</view>
             <view class="pic">
-              <image class="pre1" mode="aspectFill" src="{{rankInfo.headImg}}"></image>
+              <image bindtap="previewImg" id="{{rankInfo.headImg}}" class="pre1" mode="aspectFill" src="{{rankInfo.headImg}}"></image>
             </view>
           </view>
         </view>
@@ -32,7 +32,7 @@
           <view class='box1 box2'>
             <view class="pic-label">身份证</view>
             <view class="pic">
-              <image class="pre1" mode="aspectFill" src="{{rankInfo.idCardImg}}"></image>
+              <image bindtap="previewImg" id="{{rankInfo.idCardImg}}" class="pre1" mode="aspectFill" src="{{rankInfo.idCardImg}}"></image>
             </view>
           </view>
         </view>

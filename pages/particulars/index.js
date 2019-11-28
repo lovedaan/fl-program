@@ -7,6 +7,14 @@ Page({
     rankInfo: {},
     reasonList: [],
   },
+  // 图片预览
+  previewImg(e) {
+    let url = e.currentTarget.id;
+    wx.previewImage({
+      current: url, // 当前显示图片的http链接
+      urls: [url] // 需要预览的图片http链接列表
+    })
+  },
   //事件处理函数
   onLoad: function () {
      const { reasonList, rankInfo} = app.globalData.queryData;

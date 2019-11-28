@@ -103,6 +103,14 @@ Page({
     opt[e.currentTarget.id] = '';
     this.setData(opt);
   },
+  // 图片预览
+  previewImg(e) {
+    let url = this.data[e.currentTarget.id];
+    wx.previewImage({
+      current: url, // 当前显示图片的http链接
+      urls: [url] // 需要预览的图片http链接列表
+    })
+  },
   resetData() {
     this.setData({
       user_name: '',
