@@ -42,12 +42,12 @@ Page({
           reasonList: data.reasonList,
           rankInfo: data.rank,
         };
-        _this.setData({
-          reasonList: data.reasonList,
-          rankInfo: data.rank,
-          value: ''
-        });
-        return;
+        // _this.setData({
+        //   reasonList: data.reasonList,
+        //   rankInfo: data.rank,
+        //   value: ''
+        // });
+        // return;
         payParam({
           openId: app.globalData.openId,
           queryParam: searchValue
@@ -80,7 +80,10 @@ Page({
           value: ''
         });
       },
-      fail(res) { }
+      fail(res) { 
+        // console.log(res);
+        showToast('支付失败，请重新试一下！');
+      }
     })
   },
   onChange(e) {
