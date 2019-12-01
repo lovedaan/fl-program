@@ -52,7 +52,11 @@ Page({
           openId: app.globalData.openId,
           queryParam: searchValue
         }, 'post', true).then(result => {
-          this.weixinPay(result.data, data);
+          if (result.data.retCode == 0) {
+            this.weixinPay(result.data.data, data);
+          }else {
+            showToast('请求失败，请重新试一下！');
+          }
         }).catch(err => {
           showToast('请求失败，请重新试一下！');
         })
@@ -66,6 +70,7 @@ Page({
   },
   // 微信支付
   weixinPay(params, data) {
+    console.log(params);
     let _this = this;
     wx.requestPayment({
       timeStamp: params.timeStamp,
