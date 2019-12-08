@@ -42,12 +42,11 @@ Page({
           reasonList: data.reasonList,
           rankInfo: data.rank,
         };
-        // _this.setData({
-        //   reasonList: data.reasonList,
-        //   rankInfo: data.rank,
-        //   value: ''
-        // });
-        // return;
+        _this.setData({
+          reasonList: data.reasonList,
+          rankInfo: data.rank,
+          value: ''
+        });
         payParam({
           openId: app.globalData.openId,
           queryParam: searchValue
