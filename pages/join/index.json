@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-field": "/components/field/index",
+    "van-button": "/components/button/index"
+  },
+  "navigationBarTitleText": "申请加盟认证培训机构"
+}

@@ -1,9 +1,13 @@
 {
   "pages": [
+    "pages/join/index",
+    "pages/course/index",
+    "pages/courseDetail/index",
     "pages/index/index",
     "pages/query/index",
     "pages/query1/index",
     "pages/detail2/index",
+    
     "pages/detail/index"
   ],
   "window": {

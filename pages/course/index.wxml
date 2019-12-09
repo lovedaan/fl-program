@@ -1,0 +1,7 @@
+<view class="course-page">
+
+  <navigator hover-class="none" url="/pages/join/index" class="nav-item">
+    <text>申请加盟认证培训机构</text>
+  </navigator>
+</view>
+
