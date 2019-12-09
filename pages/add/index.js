@@ -37,12 +37,21 @@ Page({
       return;
     }
 
+    if (user_phone && !/^1[0-9]{10}$/.test(user_phone)) {
+      showToast('请输入正确格式的手机号码~');
+      return;
+    }
+
     if (!r_name) {
       showToast('请输入录上榜人员姓名或机构名~');
       return;
     }
     if (!r_phone && !r_id_card) {
       showToast('请输入录上榜人员手机号码或身份证号码~');
+      return;
+    }
+    if (r_phone && !/^1[0-9]{10}$/.test(r_phone)) {
+      showToast('请输入正确格式的手机号码~');
       return;
     }
     if (!r_xw) {
@@ -72,6 +81,11 @@ Page({
     saveHmd(JSON.stringify(data), 'post', true).then(res => {
       showToast('录入信息成功');
       this.resetData();
+      setTimeout(() => {
+        wx.navigateTo({
+          url: '/pages/index/index'
+        });
+      }, 1500);
     }).catch(err => {
       showToast('录入信息失败，请重新试一下！');
     })
