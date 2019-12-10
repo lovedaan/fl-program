@@ -39,20 +39,20 @@
       </van-cell-group>
     </view>
   </view>
-  <view class='detail-line' wx:if="{{reasonListHong.length > 0}}"></view>
-  <view class="xw-box" wx:if="{{reasonListHong.length > 0}}">
+  <view class='detail-line' wx:if="{{redList.length > 0}}"></view>
+  <view class="xw-box" wx:if="{{redList.length > 0}}">
     <view class='detail-title'>红榜记录</view>
     <view class="xw-list">
-      <view  class='xw-item' wx:for="{{reasonListHong}}" wx:key="index">
+      <view  class='xw-item' wx:for="{{redList}}" wx:key="index">
         <view class='item-text'>{{index + 1}}. {{item.reason}}</view>
       </view>
     </view>
   </view>
-  <view class='detail-line' wx:if="{{reasonListHei.length > 0}}"></view>
-  <view class="xw-box" wx:if="{{reasonListHei.length > 0}}">
+  <view class='detail-line' wx:if="{{blackList.length > 0}}"></view>
+  <view class="xw-box" wx:if="{{blackList.length > 0}}">
     <view class='detail-title'>黑榜记录</view>
     <view class="xw-list">
-      <view  class='xw-item' wx:for="{{reasonListHei}}" wx:key="index">
+      <view  class='xw-item' wx:for="{{blackList}}" wx:key="index">
         <view class='item-text'>{{index + 1}}. {{item.reason}}</view>
       </view>
     </view>

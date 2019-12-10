@@ -5,8 +5,8 @@ const app = getApp();
 Page({
   data: {
     rankInfo: {},
-    reasonListHong: [],
-    reasonListHei: [],
+    blackList: [], 
+    redList: []
   },
   // 图片预览
   previewImg(e) {
@@ -18,7 +18,7 @@ Page({
   },
   //事件处理函数
   onLoad: function () {
-    let { reasonListHong, reasonListHei} = this.data;
+     let { blackList, redList} = this.data;
      const { reasonList, rankInfo} = app.globalData.queryData;
     // let reasonList = [
     //   {
@@ -60,18 +60,10 @@ Page({
     // };
     rankInfo.headImg = rankInfo.headImg || '/assets/no-pic.jpg';
     rankInfo.idCardImg = rankInfo.idCardImg || '/assets/no-pic.jpg';
-    reasonList.length && reasonList.forEach(r => {
-      r.dateCreated = r.dateCreated ? formatTime(new Date(r.dateCreated)) : '';
-      if(r.type == 1) {
-        reasonListHei.push({...r});
-      }else {
-        reasonListHong.push({ ...r });
-      }
-      r.type = r.type == 1 ? '黑榜' : '红榜';
-    })
+    
     this.setData({
-      reasonListHei,
-      reasonListHong,
+      blackList: reasonList[0],
+      redList: reasonList[1],
       rankInfo
     });
   },

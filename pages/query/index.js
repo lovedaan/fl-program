@@ -39,11 +39,11 @@ Page({
         }
         
         app.globalData.queryData = {
-          reasonList: data.reasonList,
+          reasonList: [data.blackList, data.redList],
           rankInfo: data.rank,
         };
         _this.setData({
-          reasonList: data.reasonList,
+          reasonList: data.blackList.concat(data.redList),
           rankInfo: data.rank,
           value: ''
         });

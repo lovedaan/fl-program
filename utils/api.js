@@ -7,6 +7,11 @@ export const getWxOpenId = (data = {}, method = 'get', isLoading = false) => {
   return request(`${baseURL}min/getOpenId `, data, method, isLoading)
 }
 
+// 首页轮播图列表
+export const getBannerList = (data = {}, method = 'post', isLoading = false) => {
+  return request(`${baseURL}min/xjrz/adList`, data, method, isLoading)
+}
+
 // 录入黑名单
 export const saveHmd = (data, method = 'get', isLoading = false) => {
   return request(`${baseApiURL}/save`, data, method, isLoading, { 'content-type': 'application/json'})
