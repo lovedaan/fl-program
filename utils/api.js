@@ -2,6 +2,10 @@ import config from '../config/index.js';
 import {request} from './index.js';
 const { baseApiURL } = config;
 
+// 首页轮播图列表
+export const getBannerList = (data = {}, method = 'post', isLoading = false) => {
+  return request(`${baseApiURL}/adList`, data, method, isLoading)
+}
 
 // 机构列表
 export const findOrganizationList = (data = {}, method = 'get', isLoading = false) => {
