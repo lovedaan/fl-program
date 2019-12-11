@@ -7,7 +7,7 @@ App({
     let _this = this;
     wx.login({
       success(res) {
-        getWxOpenId({JSCODE: res.code}, 'post').then(data => {
+        getWxOpenId({JSCODE: res.code, type: 1}, 'post').then(data => {
           _this.globalData.openId = data.data;
         })
       }
