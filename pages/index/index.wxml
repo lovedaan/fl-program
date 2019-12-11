@@ -20,10 +20,10 @@
         <image class="weather-bg" src="../../assets/inquire.png"></image>
         <text>查询服务人员</text>
       </navigator>
-      <navigator hover-class="none" url="/pages/course/index" class="nav-item nav-item-blue">
+      <!-- <navigator hover-class="none" url="/pages/course/index" class="nav-item nav-item-blue">
         <image class="weather-bg" src="../../assets/inquire.png"></image>
         <text>查询认证课程</text>
-      </navigator>
+      </navigator> -->
     </view>
   </view>
 </view>
