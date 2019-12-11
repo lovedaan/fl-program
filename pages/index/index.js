@@ -6,8 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    background: ['/assets/img/1.jpg', '/assets/img/2.jpg'],
-    indicatorDots: true,
+    background: [],
+    indicatorDots: false,
     vertical: false,
     autoplay: true,
     circular: true,
@@ -23,7 +23,8 @@ Page({
         this.setData({
           background: res.data.data.map(r => {
             return config.baseURL + r.adImg;
-          })
+          }),
+          indicatorDots: res.data.data.length > 1 ? true : false
         });
       }
     })
