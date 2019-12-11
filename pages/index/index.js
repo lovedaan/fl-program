@@ -7,7 +7,7 @@ Page({
    */
   data: {
     background: ['/assets/img/3.jpg', '/assets/img/4.jpg'],
-    indicatorDots: true,
+    indicatorDots: false,
     vertical: false,
     autoplay: true,
     circular: true,
@@ -24,7 +24,8 @@ Page({
         this.setData({
           background: res.data.data.map(r => {
             return config.baseURL + r.adImg;
-          })
+          }),
+          indicatorDots: res.data.data.length > 1
         });
       }
     })
