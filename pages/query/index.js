@@ -42,18 +42,24 @@ Page({
           reasonList: [data.blackList, data.redList],
           rankInfo: data.rank,
         };
-        _this.setData({
-          reasonList: data.blackList.concat(data.redList),
-          rankInfo: data.rank,
-          value: ''
-        });
+        // _this.setData({
+        //   reasonList: data.blackList.concat(data.redList),
+        //   rankInfo: data.rank,
+        //   value: ''
+        // });
         payParam({
           openId: app.globalData.openId,
           queryParam: searchValue
         }, 'post', true).then(result => {
           if (result.data.retCode == 0) {
             this.weixinPay(result.data.data, data);
-          }else {
+          } else if (result.data.retCode == 1) {
+            _this.setData({
+              reasonList: data.blackList.concat(data.redList),
+              rankInfo: data.rank,
+              value: ''
+            });
+          } else {
             showToast('请求失败，请重新试一下！');
           }
         }).catch(err => {
@@ -79,7 +85,7 @@ Page({
       paySign: params.sign,
       success(ret) {
         _this.setData({
-          reasonList: data.reasonList,
+          reasonList: data.blackList.concat(data.redList),
           rankInfo: data.rank,
           value: ''
         });

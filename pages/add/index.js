@@ -82,7 +82,7 @@ Page({
       showToast('录入信息成功');
       this.resetData();
       setTimeout(() => {
-        wx.navigateTo({
+        wx.reLaunch({
           url: '/pages/index/index'
         });
       }, 1500);
