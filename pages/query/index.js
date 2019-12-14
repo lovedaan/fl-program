@@ -52,7 +52,19 @@ Page({
           queryParam: searchValue
         }, 'post', true).then(result => {
           if (result.data.retCode == 0) {
-            this.weixinPay(result.data.data, data);
+            wx.showModal({
+              title: '温馨提示',
+              content: '本次查询服务需要支付' + result.data.data.code_url +'元',
+              success(s) {
+                if (s.confirm) {
+                  console.log('用户点击确定')
+                  _this.weixinPay(result.data.data, data);
+                } else if (s.cancel) {
+                  console.log('用户点击取消')
+                }
+              }
+            })
+            
           } else if (result.data.retCode == 1) {
             _this.setData({
               reasonList: data.blackList.concat(data.redList),

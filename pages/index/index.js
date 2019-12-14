@@ -34,7 +34,7 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      title: '专业的查家政公司、家政人员、雇主信誉',
+      title: '家政人员、机构和雇主品行查询',
       path: '/pages/index/index',
       imageUrl: '/assets/img/1.jpg'
     }
