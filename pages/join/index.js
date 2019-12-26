@@ -11,7 +11,16 @@ Page({
     address: ''
   },
   onChange(e) {
-    console.log(e);
+    this.data[e.target.id] = e.detail.value;
+  },
+  selectCity(e) {
+    this.setData({
+      address: e.detail.value.join(' ')
+    });
+  },
+  submit() {
+    let { name, phone, orgName, address} = this.data;
+    console.log(name, phone, orgName, address);
   },
   /**
    * 生命周期函数--监听页面加载

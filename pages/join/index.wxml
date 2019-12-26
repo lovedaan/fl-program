@@ -1,48 +1,26 @@
 <view class="join-page">
   <view class="join-form">
-    <van-cell-group>
-      <van-field
-        value="{{ name }}"
-        placeholder="请输入联系人"
-        label="联系人"
-        border="{{ false }}"
-        required
-        id="name"
-        bind:change="onChange"
-      />
-      <van-field
-        value="{{ phone }}"
-        placeholder="请输入联系电话"
-        label="联系电话"
-        id="phone"
-        required
-        border="{{ false }}"
-        bind:change="onChange"
-      />
-      <van-field
-        value="{{ orgName }}"
-        placeholder="请输入机构名"
-        label="机构名"
-        id="orgName"
-        required
-        border="{{ false }}"
-        bind:change="onChange"
-      />
-      <van-field
-        value="{{ address }}"
-        placeholder="请选择城市"
-        label="城市"
-        id="address"
-        required
-        readonly
-        border="{{ false }}"
-        bind:change="onChange"
-      >
+    <view class="form-box">
+      <view class="form-item">
+        <view class="form-label"><text>*</text>联系人</view>
+        <input bindinput="onChange" id="name" value="{{name}}" placeholder="请输入联系人"></input>
+      </view>
+      <view class="form-item">
+        <view class="form-label"><text>*</text>联系电话</view>
+        <input bindinput="onChange" id="phone" value="{{phone}}" placeholder="请输入联系电话"></input>
+      </view>
+      <view class="form-item">
+        <view class="form-label"><text>*</text>机构名</view>
+        <input bindinput="onChange" id="orgName" value="{{orgName}}" placeholder="请输入机构名"></input>
+      </view>
+      <view class="form-item">
+        <view class="form-label"><text>*</text>城市</view>
+        <picker bindchange="selectCity" mode="region"><input placeholder="请选择城市" value="{{address}}" disabled="{{true}}"></input></picker>
         <image class="arrow2" src="/assets/arrow2.png" />
-      </van-field>
-    </van-cell-group>
+      </view>
+    </view>
   </view>
-  <view class="footer-btn">
+  <view class="footer-btn" bindtap="submit">
     <van-button type="info" size="large">确定</van-button>
   </view>
 </view>

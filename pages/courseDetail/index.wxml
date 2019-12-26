@@ -1,2 +1,32 @@
-<!--pages/courseDetail/index.wxml-->
-<text>pages/courseDetail/index.wxml</text>
+<view class="courseDetail-page">
+  <view class="detail-top">
+    <image mode="aspectFill" src="http://images.jxsg.com/billing_img/2019/12/0aa74dde836e851d0c1fc70c7031fc8b.jpg"></image>
+  </view>
+  <view class="detail-item">
+    <view class="item-title">基础信息</view>
+    <view class="base-info">
+      <view class="line">
+        <view class="v-label">标题</view>
+        <view class="v-val">dadkasjdlasd</view>
+      </view>
+      <view class="line">
+        <view class="v-label">举办单位</view>
+        <view class="v-val">dadkasjdlasd</view>
+      </view>
+      <view class="line">
+        <view class="v-label">联系电话</view>
+        <view class="v-val">dadkasjdlasd</view>
+      </view>
+      <view class="line">
+        <view class="v-label">联系人</view>
+        <view class="v-val">dadkasjdlasd</view>
+      </view>
+    </view>
+  </view>
+  <view class="detail-item">
+    <view class="item-title">详情内容</view>
+    <view class="base-info">
+      
+    </view>
+  </view>
+</view>

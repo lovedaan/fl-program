@@ -5,6 +5,34 @@
   padding-top: 20rpx; 
   box-sizing: border-box;
 }
+.join-form {
+  background: #fff;
+  padding: 0 30rpx;
+}
+.join-form .form-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 88rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.join-form .form-item:last-child {
+  border-bottom: none;
+}
+.join-form .form-item .form-label {
+  width: 180rpx;
+}
+.join-form .form-item .form-label text {
+  color: red;
+}
+.join-form .form-item .arrow2 {
+  position: absolute;
+  right: 0rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22rpx;
+  height: 30rpx;
+}
 .footer-btn {
   margin-top: 40rpx;
   padding: 20rpx;

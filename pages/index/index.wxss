@@ -94,6 +94,10 @@
   /* background: linear-gradient(to bottom,rgb(85, 171, 245),rgb(82, 130, 238)); */
   /* box-shadow: 3px 3px 3px 0px #fff inset,-2px -3px 3px 0px rgb(148, 113, 201) inset; */
 }
+.nav-item-ye {
+  background: #5f559b;
+  color: #fff;
+}
 .nav-item .weather-bg {
   margin-right: 30rpx;
 }
