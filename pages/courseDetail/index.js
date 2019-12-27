@@ -1,20 +1,39 @@
-// pages/courseDetail/index.js
+import {findCourseById} from '../../utils/api.js';
+import config from '../../config/index.js';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    detailsInfo: {},
+    content: '<p>这是富文本内容</p>'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options);
+    let id = options.id;
+    this.initData(id);
   },
-
+  initData(id) {
+    findCourseById({id}, 'post', true).then(res => {
+      console.log(res.data);
+      if(res.status) {
+        let data = res.data.data;
+        if(data.smallImgage) {
+          data.smallImgage = config.baseURL + data.smallImgage;
+        }else {
+          data.smallImgage = '/assets/no-pic.jpg';
+        }
+        this.setData({
+          detailsInfo: data
+        });
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

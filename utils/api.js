@@ -2,6 +2,7 @@ import config from '../config/index.js';
 import {request} from './index.js';
 const { baseApiURL } = config;
 
+
 // 首页轮播图列表
 export const getBannerList = (data = {}, method = 'post', isLoading = false) => {
   return request(`${baseApiURL}/adList`, data, method, isLoading)
@@ -35,4 +36,24 @@ export const findWaiterDetail = (data = {}, method = 'get', isLoading = false) =
 // 服务人员详情对应的证件列表
 export const findWaiterCertList = (data = {}, method = 'get', isLoading = false) => {
   return request(`${baseApiURL}/findWaiterCertList`, data, method, isLoading)
+}
+
+// 查询分类列表
+export const findAllType = (data = {}, method = 'get', isLoading = false) => {
+  return request(`${baseApiURL}/findAllTypeByParentCode`, data, method, isLoading)
+}
+
+// 查询课程列表
+export const findCourseList = (data = {}, method = 'get', isLoading = false) => {
+  return request(`${baseApiURL}/findCourseList`, data, method, isLoading)
+}
+
+// 查询课程详情
+export const findCourseById = (data = {}, method = 'get', isLoading = false) => {
+  return request(`${baseApiURL}/findCourseById`, data, method, isLoading)
+}
+
+// 机构申请
+export const saveApply = (data = {}, method = 'post', isLoading = false) => {
+  return request(`${baseApiURL}/saveApply`, data, method, isLoading, { 'content-type': 'application/json'})
 }

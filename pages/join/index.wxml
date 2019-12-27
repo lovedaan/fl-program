@@ -7,20 +7,26 @@
       </view>
       <view class="form-item">
         <view class="form-label"><text>*</text>联系电话</view>
-        <input bindinput="onChange" id="phone" value="{{phone}}" placeholder="请输入联系电话"></input>
+        <input bindinput="onChange" id="mobile" value="{{mobile}}" placeholder="请输入联系电话"></input>
       </view>
       <view class="form-item">
         <view class="form-label"><text>*</text>机构名</view>
-        <input bindinput="onChange" id="orgName" value="{{orgName}}" placeholder="请输入机构名"></input>
+        <input bindinput="onChange" id="companyName" value="{{companyName}}" placeholder="请输入机构名"></input>
       </view>
       <view class="form-item">
         <view class="form-label"><text>*</text>城市</view>
         <picker bindchange="selectCity" mode="region"><input placeholder="请选择城市" value="{{address}}" disabled="{{true}}"></input></picker>
         <image class="arrow2" src="/assets/arrow2.png" />
       </view>
+      <view class="form-item textarea-box">
+        <view class="form-label"><text>*</text>基本情况</view>
+        <view class="form-con">
+          <textarea bindinput="onChange" id="remark" value="{{remark}}" class="form-input" placeholder="提示信息"></textarea>
+        </view>
+      </view>
     </view>
   </view>
   <view class="footer-btn" bindtap="submit">
-    <van-button type="info" size="large">确定</van-button>
+    <view class="join-btn">确定</view>
   </view>
 </view>

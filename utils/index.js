@@ -5,7 +5,7 @@ export const showToast = (title = '', duration = 2000) => {
     duration
   })
 }
-export function request(url = '', data = {}, method = 'get', isLoading = false) {
+export function request(url = '', data = {}, method = 'get', isLoading = false, header = { 'content-type': 'application/x-www-form-urlencoded'}) {
   isLoading && wx.showLoading({
     title: '加载中...',
   });
@@ -14,9 +14,7 @@ export function request(url = '', data = {}, method = 'get', isLoading = false) 
       url,
       method,
       data,
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
+      header,
       success(res) {
         isLoading && wx.hideLoading();
         resolve(res.data);
@@ -48,7 +46,7 @@ export function formatTime(date) {
     n = n.toString()
     return n[1] ? n : '0' + n
   }
- 
+
     const year = date.getFullYear()
     const month = date.getMonth() + 1
     const day = date.getDate()
@@ -57,7 +55,7 @@ export function formatTime(date) {
     const second = date.getSeconds()
 
     return [year, month, day].map(formatNumber).join('.');
- 
 
-  
+
+
 }

@@ -33,7 +33,37 @@
   width: 22rpx;
   height: 30rpx;
 }
+.join-form .textarea-box {
+  align-items: flex-start;
+  height: 310rpx;
+}
+.join-form .textarea-box .form-label {
+  padding-top: 30rpx; 
+}
+.form-con {
+  flex: 1;
+  padding: 20rpx 0;
+}
+.join-form .textarea-box .form-input {
+  width: 100%;
+  border: 1rpx solid #eee;
+  background: #eee;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
 .footer-btn {
   margin-top: 40rpx;
   padding: 20rpx;
+}
+
+.footer-btn .join-btn {
+  width: 690rpx;
+  margin: 0 auto;
+  height:90rpx;
+  line-height: 90rpx;
+  background:rgb(46, 108, 241);
+  box-shadow:0px 6px 24px 0px rgba(46, 108, 241,0.4);
+  border-radius:42px;
+  text-align: center;
+  color: #fff;
 }

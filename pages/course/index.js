@@ -1,20 +1,43 @@
-// pages/course/index.js
+import {findCourseList} from '../../utils/api.js';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    list: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.initData();
   },
+  initData() {
+    findCourseList({}, 'post', true).then(res => {
+      if(res.status) {
+        let data = res.data, list = [];
+        for(let k in data) {
+          list.push({
+            name: k,
+            list: data[k]
+          });
+        }
+        this.setData({
+          list
+        });
+      }
+      console.log(res.data);
+    })
+  },
+  goToPage(e) {
 
+    let id = e.currentTarget.id || e.target.id;
+    wx.navigateTo({
+      url: '/pages/courseDetail/index?id=' + id
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

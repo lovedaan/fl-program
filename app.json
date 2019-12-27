@@ -1,10 +1,10 @@
 {
   "pages": [
-    "pages/courseDetail/index",
-    "pages/join/index",
-  
-    "pages/course/index",
     "pages/index/index",
+    "pages/course/index",
+    "pages/join/index",
+    
+    "pages/courseDetail/index",
     
     "pages/query/index",
     "pages/query1/index",

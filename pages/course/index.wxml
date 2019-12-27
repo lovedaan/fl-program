@@ -1,48 +1,10 @@
 <view class="course-page">
   <view class="scroll-view">
-    <view class="course-item">
-      <view class="c-title">母婴护理类</view>
+    <view class="course-item" wx:for="{{list}}" wx:key="{{index}}">
+      <view class="c-title">{{item.name}}</view>
       <view class="circle-box">
-        <view class="circle-item">
-          <view class="c-hd"></view>
-          <view class="c-bd">初级月嫂</view>
-        </view>
-        <view class="circle-item">
-          <view class="c-hd"></view>
-          <view class="c-bd">中级月嫂</view>
-        </view>
-        <view class="circle-item">
-          <view class="c-hd"></view>
-          <view class="c-bd">高级月嫂</view>
-        </view>
-        <view class="circle-item">
-          <view class="c-hd"></view>
-          <view class="c-bd">催乳师</view>
-        </view>
-        <view class="circle-item">
-          <view class="c-hd"></view>
-          <view class="c-bd">产后调理师</view>
-        </view>
-        <view class="circle-item">
-          <view class="c-hd"></view>
-          <view class="c-bd">婴幼儿按摩</view>
-        </view>
-      </view>
-    </view>
-    <view class="course-item">
-      <view class="c-title">护工类</view>
-      <view class="circle-box">
-        <view class="circle-item">
-          <view class="c-hd"></view>
-          <view class="c-bd">初级护理师</view>
-        </view>
-        <view class="circle-item">
-          <view class="c-hd"></view>
-          <view class="c-bd">中级护理师</view>
-        </view>
-        <view class="circle-item">
-          <view class="c-hd"></view>
-          <view class="c-bd">高级护理师</view>
+        <view bindtap="goToPage" class="circle-item" wx:for-index="idx" wx:for-item="it" wx:for="{{item.list}}" wx:key="{{idx}}" id="{{it.id}}" >
+          <view class="c-bd">{{it.title}}</view>
         </view>
       </view>
     </view>

@@ -1,32 +1,32 @@
 <view class="courseDetail-page">
   <view class="detail-top">
-    <image mode="aspectFill" src="http://images.jxsg.com/billing_img/2019/12/0aa74dde836e851d0c1fc70c7031fc8b.jpg"></image>
+    <image mode="aspectFill" src="{{detailsInfo.smallImgage}}"></image>
   </view>
   <view class="detail-item">
     <view class="item-title">基础信息</view>
     <view class="base-info">
       <view class="line">
         <view class="v-label">标题</view>
-        <view class="v-val">dadkasjdlasd</view>
+        <view class="v-val">{{detailsInfo.title}}</view>
       </view>
       <view class="line">
         <view class="v-label">举办单位</view>
-        <view class="v-val">dadkasjdlasd</view>
+        <view class="v-val">{{detailsInfo.organizers}}</view>
       </view>
       <view class="line">
         <view class="v-label">联系电话</view>
-        <view class="v-val">dadkasjdlasd</view>
+        <view class="v-val">{{detailsInfo.mobile}}</view>
       </view>
       <view class="line">
         <view class="v-label">联系人</view>
-        <view class="v-val">dadkasjdlasd</view>
+        <view class="v-val">{{detailsInfo.contactsUser}}</view>
       </view>
     </view>
   </view>
   <view class="detail-item">
-    <view class="item-title">详情内容</view>
-    <view class="base-info">
-      
+    <view class="item-title">课程介绍</view>
+    <view class="base-info content">
+      <rich-text nodes="{{detailsInfo.content}}"></rich-text>
     </view>
   </view>
 </view>

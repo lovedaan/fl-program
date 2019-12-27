@@ -1,4 +1,5 @@
-// pages/join/index.js
+import {saveApply} from '../../utils/api.js';
+import { showToast } from '../../utils/index.js';
 Page({
 
   /**
@@ -6,9 +7,10 @@ Page({
    */
   data: {
     name: '',
-    phone: '',
-    orgName: '',
-    address: ''
+    mobile: '',
+    companyName: '',
+    address: '',
+    remark: '',
   },
   onChange(e) {
     this.data[e.target.id] = e.detail.value;
@@ -19,8 +21,52 @@ Page({
     });
   },
   submit() {
-    let { name, phone, orgName, address} = this.data;
-    console.log(name, phone, orgName, address);
+    let { name, mobile, companyName, address, remark} = this.data;
+    if(!name) {
+      showToast('请输入联系人姓名');
+      return;
+    }
+    if(!mobile) {
+      showToast('请输入联系电话');
+      return;
+    }
+    if (mobile && !/^1[0-9]{10}$/.test(mobile)) {
+      showToast('请输入正确格式的手机号码~');
+      return;
+    }
+    if(!companyName) {
+      showToast('请输入机构名');
+      return;
+    }
+    if(!address) {
+      showToast('请选择城市');
+      return;
+    }
+    if(!remark) {
+      showToast('请输入基本情况');
+      return;
+    }
+    let params = {
+      name,
+      mobile,
+      address,
+      companyName,
+      remark,
+      type: 2
+    };
+    console.log(name, mobile, companyName, address, remark);
+    saveApply(JSON.stringify(params), 'post', true).then(res => {
+      if(res.status) {
+        showToast('提交成功');
+        setTimeout(() => {
+          wx.navigateBack({
+            delta: 1
+          });
+        }, 1500);
+      }
+
+    })
+
   },
   /**
    * 生命周期函数--监听页面加载

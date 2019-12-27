@@ -44,6 +44,24 @@
   background: #ccc;
   margin-bottom: 10rpx;
 }
+.course-item .circle-box .circle-item .c-bd {
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1rpx solid #1989fa;
+  width: 80%;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 42px;
+  text-align: center;
+  border-radius: 2px;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  -webkit-appearance: none;
+  -webkit-text-size-adjust: 100%;
+  color: #1989fa;
+}
 .course-page .footer-btn {
   background: #fff;
   padding: 15px 30rpx;
