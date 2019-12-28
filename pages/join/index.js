@@ -55,7 +55,11 @@ Page({
       type: 2
     };
     console.log(name, mobile, companyName, address, remark);
-    saveApply(JSON.stringify(params), 'post', true).then(res => {
+    wx.showLoading({
+      title: '提交中...',
+    });
+    saveApply(JSON.stringify(params), 'post', false).then(res => {
+      wx.hideLoading();
       if(res.status) {
         showToast('提交成功');
         setTimeout(() => {
@@ -65,6 +69,8 @@ Page({
         }, 1500);
       }
 
+    }).catch(err => {
+      wx.hideLoading();
     })
 
   },
