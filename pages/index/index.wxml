@@ -12,13 +12,13 @@
   <view class="nav-wrap">
     <van-divider contentPosition="center" customStyle="color: #aaa;border-color: #ccc;font-size: 16px;">携家认证精准查询</van-divider>
     <view class="nav-box">
-      <navigator hover-class="none" url="/pages/query1/index" class="nav-item">
-        <image class="weather-bg" src="../../assets/inquire.png"></image>
-        <text>查询授权培训点</text>
-      </navigator>
       <navigator hover-class="none" url="/pages/query/index" class="nav-item nav-item-blue">
         <image class="weather-bg" src="../../assets/inquire.png"></image>
         <text>查询服务人员</text>
+      </navigator>
+      <navigator hover-class="none" url="/pages/query1/index" class="nav-item">
+        <image class="weather-bg" src="../../assets/inquire.png"></image>
+        <text>查询授权培训点</text>
       </navigator>
       <navigator hover-class="none" url="/pages/course/index" class="nav-item nav-item-ye">
         <image class="weather-bg" src="../../assets/inquire.png"></image>

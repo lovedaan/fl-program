@@ -3,13 +3,13 @@
     <image mode="aspectFill" src="{{detailsInfo.smallImgage}}"></image>
   </view>
   <view class="detail-item">
-    <view class="item-title">基础信息</view>
+    <view class="item-title">{{detailsInfo.title}}</view>
     <view class="base-info">
-      <view class="line">
+      <!-- <view class="line">
         <view class="v-label">标题</view>
         <view class="v-val">{{detailsInfo.title}}</view>
-      </view>
-      <view class="line">
+      </view> -->
+      <!-- <view class="line">
         <view class="v-label">举办单位</view>
         <view class="v-val">{{detailsInfo.organizers}}</view>
       </view>
@@ -20,7 +20,7 @@
       <view class="line">
         <view class="v-label">联系人</view>
         <view class="v-val">{{detailsInfo.contactsUser}}</view>
-      </view>
+      </view> -->
     </view>
   </view>
   <view class="detail-item">
